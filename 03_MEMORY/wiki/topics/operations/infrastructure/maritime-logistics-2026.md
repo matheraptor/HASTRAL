@@ -28,6 +28,7 @@ The global shipping industry faces unprecedented delays in 2026 due to multiple 
 (source: FreightAmigo, 2026 Port Congestion)
 
 **Impact on shippers**:
+
 - Extended lead times (weeks to months beyond normal schedules)
 - Increased operational costs
 - Inventory accumulation at ports
@@ -42,6 +43,7 @@ The Red Sea remains a critical chokepoint carrying ~12% of global trade and 30% 
 **Houthi Attacks**: The Houthis (Iran-backed militia in Yemen) have conducted sustained attacks on commercial vessels transiting the Red Sea and Bab el-Mandeb Strait. (source: MARAD Advisory 2026-006)
 
 **International Response**:
+
 - US Department of Transportation (MARAD) issuing advisories to mariners
 - International Maritime Organization (IMO) condemning attacks and calling for coordinated international protection
 - Increased military escorts and defensive measures

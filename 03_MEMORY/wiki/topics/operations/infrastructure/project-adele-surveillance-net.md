@@ -40,6 +40,7 @@ The Argus-7 units ("Sniffers") are deployed at critical fiber convergence points
 ### Cover Narrative
 
 Officially designated as "Medical Computing" infrastructure for:
+
 - Remote healthcare delivery
 - Disaster relief pharmacy modules
 - Smart grid restoration in post-crisis regions

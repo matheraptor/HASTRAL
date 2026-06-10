@@ -38,11 +38,13 @@ The IRC identifies three converging crises:
 ## Sudan: Catastrophic Famine Risk
 
 **Crisis Magnitude**:
+
 - **19.5 million people** facing acute food insecurity
 - Risk of widespread famine and mass displacement
 - Humanitarian access severely limited by conflict
 
 **Compounding Factors**:
+
 - Supply chain disruptions prevent food imports
 - Fuel shortages limit internal food distribution
 - Funding constraints prevent emergency interventions
@@ -54,6 +56,7 @@ The IRC identifies three converging crises:
 Major organizations including **Médecins Sans Frontières (MSF)** and **Oxfam** have suspended operations due to new Israeli regulations (staff-list requirements).
 
 **Impact**:
+
 - Healthcare delivery paralyzed
 - Water/sanitation systems undermanned
 - Food distribution networks collapse

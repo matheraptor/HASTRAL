@@ -51,7 +51,8 @@ Example: Post-January 2026 Israeli airstrike surge led BoP to declare Beirut Por
 
 ### Compliance Audit Framework
 
-**"Supply Chain Transparency" Mandate**
+**"Supply Chain Transparency" Mandate:**
+
 - Random audits of Board-certified partner organizations
 - Verification of no subsidized Chinese components in infrastructure
 - Authority to seize devices/servers for "forensic audit" if undocumented systems detected
@@ -102,6 +103,7 @@ Board-approved humanitarian deployments enable global surveillance network:
 ### Sovereignty Constraints & Workarounds
 
 The BoP structure enables bypass of:
+
 - UN Security Council veto power (particularly Russian/Chinese opposition)
 - National sovereignty over infrastructure deployment
 - Traditional maritime law restrictions on surveillance infrastructure

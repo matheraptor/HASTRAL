@@ -18,7 +18,7 @@ tags: [log, index]
 - Processing: `4-.hastral-archive.part1.md` through `part2.md`
 - Processing: `9-03_HR.part1.md` through `part3.md`
 - Status: In-Progress (Batch 1 & 2 Complete: Maritime/News + Archive)
-- Destination: 
+- Destination:
   - `wiki/topics/operations/infrastructure/maritime-logistics-2026.md`
   - `wiki/topics/research/geopolitics/maritime-choke-points.md`
   - `wiki/topics/operations/humanitarian/global-crisis-2026.md`
@@ -26,7 +26,6 @@ tags: [log, index]
   - `wiki/topics/operations/maritime/task-force-raptor.md`
   - `wiki/topics/research/geopolitics/board-of-peace-governance.md`
   - Updated: `wiki/index.md`
-
 
 ## Ingestion Session (2026-06-09)
 

@@ -24,6 +24,7 @@ origin: [2-20260518_news]
 The Iran-backed Houthis have launched coordinated attacks on commercial shipping in the Red Sea, Bab el-Mandeb Strait, and surrounding waters.
 
 **Incident Pattern**:
+
 - Multiple vessels targeted per week
 - Attacks include anti-ship missiles, naval raids
 - Both military and civilian cargo vessels affected
@@ -33,6 +34,7 @@ The Iran-backed Houthis have launched coordinated attacks on commercial shipping
 ### International Maritime Organization (IMO) Position
 
 The IMO has:
+
 - Condemned the attacks as violations of international maritime law
 - Called for freedom of navigation protections
 - Recommended international coordinated defense mechanisms
@@ -45,6 +47,7 @@ The IMO has:
 ### Geopolitical Context
 
 Iran has effectively closed or heavily restricted transit through the Strait of Hormuz, a critical chokepoint that carries:
+
 - **20% of global oil exports**
 - **Majority of Middle Eastern energy shipments**
 - Heavy crude oil destined for Asia, Europe, and North America
@@ -52,6 +55,7 @@ Iran has effectively closed or heavily restricted transit through the Strait of 
 ### Japan's Energy Security Crisis
 
 Japan is acutely vulnerable:
+
 - ~90% of crude oil imports via Hormuz historically
 - No domestic energy reserves
 - Dependent on OPEC and Russia for supplies
@@ -61,6 +65,7 @@ Japan is acutely vulnerable:
 ### Derivative Supply Chain Collapse
 
 Hormuz closure and Red Sea attacks combine to create a "perfect storm":
+
 - Oil prices spike
 - LNG (liquefied natural gas) redirected to alternate routes (longer, more costly)
 - Energy-intensive manufacturing disrupted
