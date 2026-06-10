@@ -35,6 +35,7 @@ origin: 4-.hastral-archive.md
 - ETA Manila North Harbor: February 4, 0600 PHT
 - ETA Okinawa Naha Port: February 7, 1200 Z
 - Current mission: "Raptor-Vector" logistical support vessel
+- **May 2026 Update**: Executing [[mission-frag-040]], transiting the Arabian Sea toward Aomori, Japan, with ~18,000 tons of underutilized capacity used for humanitarian relief. (source: 1-.hastral-ops-0249.md)
 
 (source: Manila_delivery.pdf, Okinawa_delivery.pdf)
 

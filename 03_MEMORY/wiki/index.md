@@ -59,6 +59,11 @@ _Articles_: [[topics/operations/hardware/microsd-failure-diagnostics|microSD Fai
 **Purpose**: System audits, post-mortems, and doctrine maintenance.
 _Articles_: [[session_friction_audit|Session Friction Audit]], [[session_post_mortem_doctrine_disconnect|Post-Mortem & Doctrine Disconnect]], [[topics/operations/security/predictable_ids|Predictable IDs]], [[server-security-fundamentals|Server Security Fundamentals]], [[tls-jwt-implementation|TLS & JWT Implementation]], [[topics/operations/security/nwjs-env-exposure|NW.js Env Exposure]].
 
+### [[topics/operations/maritime/index|Maritime Operations]]
+
+**Purpose**: Strategic transit, fleet management, and mission logistics.
+_Articles_: [[topics/operations/maritime/mission-frag-040|Mission FRAG-040]], [[topics/operations/maritime/a9805-diego-marea|A9805 Diego Marea]], [[topics/operations/maritime/task-force-raptor|Task Force Raptor]].
+
 ### [[topics/operations/infrastructure/index|Infrastructure]]
 
 **Purpose**: System insights, environment stability, supply chain logistics, and maritime operations.

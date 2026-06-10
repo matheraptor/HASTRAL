@@ -71,6 +71,8 @@ Hormuz closure and Red Sea attacks combine to create a "perfect storm":
 - Energy-intensive manufacturing disrupted
 - Transportation costs surge globally
 
+**Suez-Indo-Pacific Corridor**: This route remains the primary arterial transit for strategic humanitarian cargo (e.g., Limassol to Aomori), though it requires heightened vigilance due to regional volatility. (source: 1-.hastral-ops-0249.md)
+
 ## Related pages
 
 - [[topics/operations/infrastructure/maritime-logistics-2026|Maritime Logistics Crisis 2026]]

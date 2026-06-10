@@ -6,6 +6,21 @@ tags: [log, index]
 
 # Wiki Ingestion Log
 
+## Ingestion Session (2026-06-10 C)
+
+- Processing: `1-.hastral-ops-0249.md`
+- Processing: `10-.hastral-assets.md`
+- Processing: `11-.hastral-roster.md`
+- Processing: `12-08_log_Aomori_trip00.md`
+- Processing: `3-07_Intel.md`
+- Processing: `5-.hastral-raptor.md`
+- Processing: `6-09_lore_TricksterSwitch.md`
+- Processing: `7-00_doctrine.md`
+- Processing: `8-01_SOP.md`
+- Processing: `9-03_HR.md`
+- Status: In-Progress
+- Destination: TBD
+
 ## Ingestion Session (2026-06-10)
 
 - Processing: `20260610_db_corruption_debug.md`
@@ -233,9 +248,3 @@ Ingestion Session (12:00 PM)
 - Processing: `git-pull-requests.md`
 - Status: Completed
 - Destination: `wiki/git/pull-requests.md`
-
-## Ingestion Session (2026-06-10)
-
-- Processing: Batch 3 HR/Personnel chunks (9-03_HR.part*.md)
-- Status: Completed
-- Destination: wiki/HR_Policies_Framework.md, wiki/Organizational_Structure.md, wiki/Team_Onboarding_Guide.md

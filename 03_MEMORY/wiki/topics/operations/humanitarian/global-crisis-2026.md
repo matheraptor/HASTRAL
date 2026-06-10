@@ -35,6 +35,8 @@ The IRC identifies three converging crises:
 
 (source: IRC Press Release, March 20, 2026)
 
+**Operational Context (May 2026)**: The "triple emergency" has evolved into a complex transit challenge for relief vessels, necessitating strategic stop-overs in hubs like Colombo (Sri Lanka) and Singapore/Port Klang (Malaysia) to address critical backlogs of medical kits and assistive devices. (source: 1-.hastral-ops-0249.md)
+
 ## Sudan: Catastrophic Famine Risk
 
 **Crisis Magnitude**:
