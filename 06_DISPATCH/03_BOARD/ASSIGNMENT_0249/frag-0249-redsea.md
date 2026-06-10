@@ -1,0 +1,9 @@
+# The Red Sea Theater: Conflict Dynamics and Navigational Hazards
+
+Upon exiting the Suez Canal and entering the Red Sea, the vessel enters a high-risk zone defined by persistent asymmetrical threats. Although a ceasefire in late 2025 temporarily halted large-scale Houthi attacks, the group continues to pose a significant threat to vessels with perceived associations with the United States, United Kingdom, or Israel.[10] The historical record from 2025, which saw the sinking of the bulk carriers Magic Seas and Eternity C off the coast of Hodeidah, serves as a stark reminder of the lethal capability of Houthi maritime assets, including unmanned underwater vehicles (UUVs) and explosive boat attacks.[10]
+
+The Southern Red Sea and Bab el-Mandeb are currently categorized at a "Moderate" threat level, with steady traffic of approximately 98 vessel transits every 48 hours as of mid-May 2026.[6] However, a persistent "Critical" overall maritime risk level for the broader Middle East region remains in place due to the Hormuz blockade and residual mining threats near the Traffic Separation Schemes (TSS).[5, 6]
+
+## Electronic Warfare and GNSS Interference
+
+A critical navigational hazard for vessels transiting the central and southern Red Sea is the high level of Global Navigation Satellite System (GNSS) interference. Maritime security advisories indicate that jamming and spoofing effects, likely originating from conflict zones, frequently extend into the maritime corridors, potentially causing significant positional errors or loss of signal.[6, 11] The International Maritime Organization (IMO) has called for a coordinated international approach to safety, emphasizing that mariners must account for the psychological pressure and fatigue caused by navigating these high-risk areas while electronic systems suffer extensive disruption.[11]

@@ -1,0 +1,15 @@
+.eslintignore
+.github
+.markdownlint.json
+.npmrc
+.vscode
+coverage
+demo/*
+doc-build
+eslint.config.mjs
+example
+npm-debug.log
+schema/*.mjs
+scripts
+test
+test-repos

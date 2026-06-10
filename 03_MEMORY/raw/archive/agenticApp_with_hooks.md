@@ -1,0 +1,1371 @@
+---
+title: "does Ollama support hooks?"
+source: "https://www.google.com/search?sca_esv=99e60bb1754c5a2c&sxsrf=ANbL-n5c3-eNXSSv6bsxUX7D5xl51pU3RA%3A1775044542919&source=hp&ei=vgfNaa2gNqqii-gPtpSfkQ4&iflsig=AFdpzrgAAAAAac0Vzm7RhAlgzvsN2N_6ty53APUBIVyi&aep=22&ved=2ahUKEwiqx9fbx_eTAxUG0gIHHYm3IhwQoo4PegYIAQgAEAE&oq=&gs_lp=Egdnd3Mtd2l6IgBIAFAAWABwAHgAkAEAmAEAoAEAqgEAuAEByAEAmAIAoAIAmAMAkgcAoAcAsgcAuAcAwgcAyAcAgAgB&sclient=gws-wiz&mtid=TqLjaevAFpS0i-gPiZumYA&q=does+Ollama+support+hooks%3F&mstk=AUtExfCvRbwkaKE1P5ZIdE8X13tIYJPa2JWa9uTHA9yGILaN48uCUQvp0qVMQAPv2GOwXAFa8DLviWpLW7VwdsAMDBUznez2T7GGsq0-imz8x2XDfLUf67isZELi8ouJNdDcCy7AJMtnS_yKddZfd34zf5Jjws7ffeJ3vxxY56tjz16J7lGGCB0vVFefvqFItAt9H_9tvCDTfKP4a1XFMu158jPt3lYGS19WilVAk2vq3irfdlEFZiECYyGPOsYSnPhjDag7WefAavxG5q70c3Ea9b2AjWsKetzRa2U&csuir=1&udm=50"
+author:
+published:
+created: 2026-04-18
+description:
+tags:
+  - "clippings"
+---
+## Search Results
+
+Hi MaTheRaptor, what's on your mind?
+
+does Ollama support hooks?
+
+==Ollama does not currently have built-in "hooks"== in the sense of native **server-side webhooks** or internal event lifecycle hooks (e.g., "pre-generate" or "post-generate").
+
+However, depending on what you are trying to achieve, there are several ways to implement similar functionality:
+
+1\. External Webhook Support
+
+As of late 2024, native webhook support is a [highly requested feature](https://github.com/ollama/ollama/issues/5461) but is not yet part of the core Ollama binary.
+
+- **Workaround:** Most developers use a "proxy" or middle layer (like a small Python or Node.js server) that receives the request, forwards it to Ollama, and then triggers a webhook once the response is complete.
+
+2\. React/Frontend Hooks
+
+If you are developing a web application, there are several community-maintained libraries that provide **React Hooks** to simplify interacting with the Ollama API:
+
+- **use-ollama**: A custom hook for standard API tasks like `chat`, `generate`, and model management.
+- **[use-local-llm](https://github.com/pooyagolchian/use-local-llm)**: Provides hooks for streaming responses from Ollama and other local backends.
+
+3\. Git Hooks Integration
+
+You can manually integrate Ollama into your development workflow using standard **Git Hooks**. For example, you can write a `pre-commit` hook script that uses the Ollama CLI to automatically review code or check for secrets before a commit is allowed.
+
+4\. Tool Calling (Function Calling)
+
+While not "hooks" in the traditional sense, Ollama supports **Tool Calling**. This allows the model to "hook" into external APIs or local functions by generating a structured request that your application then executes.
+
+Would you like an **example script** for setting up a proxy for webhooks or a specific **Git hook** configuration?
+
+- Tool calling - Ollama's documentation
+	Copy page. Ollama supports tool calling (also known as function calling) which allows a model to invoke tools and incorporate thei...![](data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAFIAUQMBIgACEQEDEQH/xAAcAAADAAMBAQEAAAAAAAAAAAAAAQIEBQcIBgP/xAArEAACAgEDAwMDBAMAAAAAAAAAAQIDBAURIQYTMRIUUSJBYRUygZEjQnH/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8A4eAHpHQOj+n7dG0yMtBwL6Z0Y6tvnQpTs9dcXKXc33T3mn4+3GwHm4CrUo2TUfCk0hIARSQi0AIpAhgBSQIewCGMAMMz69a1SrG9tVqWbDH227Mciaht8bb7GAAAikhLwUkA0ikCRSQAikA0A0MBgICgAwAXkBrwA0WiUWgGikJFANIoSKAEMQwAAADAGgRu8bUu1RCN+mxuhCv0xlJcR/K3Wy325+eWBp1svLKWz8M3ENcrgo9rS8WHp5+n5/oLNXhZDa3TMZycdlNrnw18fL3/AOgapFJCSP1hVZJNxrm1GPqk1F8L5f45XIEoYDQAMQwAAADAXg6R0t1DRZ0vpuma7reR7R6v278eWVPb2vZSUZJPfterhpceTm68FxA6jjU9L9+t3w6b/VXCj3kHc/ZRrdlncdT9W3c7fZ32fz6edzW6nf03mdW9OVzyY26HThwpscpP6Iqy1xjZtyvMPV90mfBopAdQ0XG6YnnTlrr6Yi5quu+rEubhCLU95xlKain+1NVqT32e6+o2/wCt9PZGnQx8rVcOcPbKLg8jbd9jFi09nz+2a2/D+DjSKA6dXj9NajLNs07B0f3uPLNrxqtpuiVcbKu3Zaot/wCjs2k9k3t+D5LrzCxdO6w1PEwaa6MeqcIwqrTUY/44t7b8+WzSY2TkYlyuxMi7HtXCspscJL+VyROUpzlOcpSnJuUpSe7k35bf3YAAAAAAAYKLQgAtFIYAUhgAFIaEADAAAAAAP//Z)
+	Ollama
+- Tool support · Ollama Blog
+	25 Jul 2024 — Tool support. July 25, 2024. ollama with a box of tools, ready to serve you. Ollama now supports tool calling with popular models...![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFIAAABSCAMAAADw8nOpAAAAbFBMVEX///8AAAD19fVvb2/t7e35+fnZ2dnq6urc3Nzm5ub8/Pzg4ODy8vK4uLjQ0NDW1ta+vr5DQ0PHx8elpaWQkJCurq49PT2fn59eXl4mJiZ8fHxmZmaEhIRNTU11dXVZWVk2NjYTExMcHBwvLy8EMTRrAAAIYUlEQVRYhe1Y65KzKBClVUREQREl3m/v/47boGaSmcy3Se1W7Z/tmvEWPUBfTndDyP/ymXDqT2lA/yVAGsKiCRVTsyxjpwNCIlsF/whyAN1DP8KkpSy6bVEaAJp/MuEI6rhpqzI870uAicag3/0+ET8eSeigJgzEdQsrXoJ9F9J2Px5VAIwQ05+3o803KAVU70KWC/v+yIDC47XQxOFrXPybkGLVYou/PRwNHtSanXOe/akugb8FSQdjjTNlasyFrNbIQdyuAS4dTuGPz1/L1OAh0Aaa8XxyKNFM563XgpNk+6Gi1yJxlWnZhH25z157Fgp30pfPwB1oeduNMPzAHYOiHVB127cPZXpdzW+7EX7VumOqK5zg3PEkEUJwFn0Pl659c+UObNu3mG5jNw9ELPAk2xiaqji83kD6N0gPosaClYfXcG+Pzk+Rsljndg7RK+Fm8xp+htrvYvCb40qCYIMtapLUxqJe6c1GjGTaAsxvB5CTfKrPAFQQ3wBy0rfh0I2o3Uyvq3OC2Y35vjZJ3ekjSghba4RUzRRVOicawScA57MljsnKTyDl5erlzKzMSxYMyEeZhCDZ1xoVsKIP6eUTSDEeTsM9i01V3qAH9DeyI7+75ebeNp8sfIrKyF9V4M6dIXIiNYbWUhxvmC17H+6ApMvBG6M3k4Y0a+wucNLHSCQG+REihxDzQeIut8E/Cds4qBi6VH2+km4fxKMDQK/soaVfkEgf7RRuaPBLWvMRJAybWavVJY3yShCBtlZ/pdp0+8jRCVTaFKR2ycHsrzP2p7ocj6TWQ4bRU7x8xayfWdx4xiTZiuqc2+jFGxl8pkoiznzIoE2Wl7lwhE8rmPIM3myHlwxWwFUaDPWLn1+JuntLuLyejj2HkreXP184ZjFXNggv7evwNXWn6+mwv0PG5jbEtD7fQ/Vf/vhbMji9K32CDNRwBVXddz71ybsd9d/VUfIIWDLfx4x0Fw5qP+6zkQZ5h/XD9GUL68M5/V6mxNeD5CgSgvGCrGaLTMOno3aocjYXSdSQ5eFjR7nooU6nWUCvD5vwDhk7raz3qK+c49E8PBY6OoIk0uqnxQ4wZH75GrZlvIXdYGp9Vq4FLtyY8DFRCAw5nQh6cPdI0mJadt4/p/8cq1M3O9sXKHldma5fPWSMabftbe7inIqT23sfZplXHm3CHMECunyLvQy8Bwwm4BEKl0W++3pL+1IwQJvzFsfdvcdZHCCSpvNLnUQVjjY2sG7PsXIwbmdZYvvbBktvwEPWQKIkFpwTKLL+Zr0CYlw5TiH37uesklbNUDX5c6dw0FBYoxeaXESC0YMuLChGaRAJgrfJWIx1rJS8qRhPxVzgIUyUivXIIpieSeKYZV9HNuRKiSziR6R2Y8qE0lqSLKZZ0Wgoy7EcsYgv3UXZ4KFp8LiVUWeepuk5PR0lKeaIJyphxVFPN30smI+ehLKIjXqRaW2JHYc0eBQ64STqfnzglspxGG1UpHYW4DqTafcjQpVGhynTLAp40SA1GWQtE8M3cQq1ffhl99UZI2i56yjiBFvJQ5USdOLqYoo2ZhlN0lbBTQ1kuEmrqryS+lBfKSb8lE3BcO8phE8wGWgpVnzIRHXU1QNwnhIhXezxjCpsl4zJNdGdEa50noxzHDMqEhz54YtbKv8AO75czpbhJG/+Nwod4yJBZ3RziGiMr8S77HFwicQjq6N3cNFeGBJL0cE9UZnNI9hh6peQxyo+6MkA47q23QIlwaI7jYnoiy0p1rEgt9zIaPLq4T2hJRrXzF14t49p7xMuZkKjbHcekLsCe3e6LyeSKZkqEuu56odqkF3pInhyDJIggWDq7iQR5VWtOo++Qyal0kU9wjI3MBUiyqKohhwHj5NMEUWhACP6VdWGi7xUQiRLzuXo/oQci+XCUSfNOrPv6MS91d04XTVBtfp3eKQIZwi5tMtSkbZt9wUP7bLjv/9rW73d57aNd8dPku+1QOiHVgztFiRQeIoqU/Ozt8RYeVjuHxraYHdGkDFnWUQRck4SntV1Yelj/MUaabF5gCTbz/78ktzROlEx5wHLBBTeAumEjplxjo4gklhJ7cImeJwlGui3qiKDg4yVg8RILm48iWPekPCbgtKAP0F+Jd9vwtqjsk4UFykyxzlLMoyWSy0fRAlVqgdI5O9z1OKet0SudQfbYQYRs4Qg56MuOTabnMc0pRFjUeY0SrMscAn4cZauoFq7QlcjQKjwrVQY7+Rze4yUxOiWIogAyTylFN1VxOi1WeCSakoDl5mib5DNZBuAHXq9o5+jo4Nhgqfy3IjIFNKRoAwhEQ6nx6IoCzKHGWRBxBUSSDTq9gGRtuhGjKfYnFNpwtAYvzFxkhTKAYlsP6UO08F6g3MnruOmKXuIHmeGI/1E92I4PqqM7KrtpGONiK35tVXhUBGcC8xDmH8w6SVjPj5AKu99WFBejRg/ytl7+S8JT1nGlnzOf5NqzB+LsTPZDPeUFOxHSXI2KXaojDWmbNt5Cn+RG+yPZfiZ3mC4PxmnR8jOdNPQDbb+0+aJzp9ypI8R+UVJZPZ6oeu58DqcH9oV51npV+7Ku/zrw0tWP5nxoZ7q3FbSve9J+tt8GYawG44TDfOl98LkFteQPG+1LC7Oqsetxdp70XBW3mYsp3O+LBxLHo3tdFfCkMS1tXF/e9r5yiGsp6cmR2AJkuZXkRxC0w6HP2V9vROqqz68UqzusUs0EWH7ZOQX/9QtbM+NSAd9CRfpzQbmfj6clvWeOuRX76rs3BlbyYGq6tab4Xay1I8t2jrs7hbBWrAd+z81P7oYWhuWpqCxSN7Z+6uzsO+7NzaGWTWVgX6zPabv7jTzsn9v0/MD+be25f+X/07+AikxhSJpgRU3AAAAAElFTkSuQmCC)
+	Ollama
+- Webhook support · Issue #5461 · ollama/ollama - GitHub
+	3 Jul 2024 — Webhook support #5461.... Description.... Since Ollama now supports parallel requests since #358, i would like to suggest suppor...![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFIAAABSCAMAAADw8nOpAAAAllBMVEX///8ArdjY7fYApdX19fX5+fn8/PwAAADp6eny8vLT09Ps7Ozv7+/Ex8rS1djAwsTi4+S7vL3KysqvtLmsra3a292ChIaorrMsMzrLztEIFyIAAAVGSk41O0IYIiujpKYAABOWlpaOlZ2ZoKcFERtxc3RRVVgRHCh4en0kLDQ9QkdcYGSKjI5nam4AAA0ADRwXFxc9PT3t2nX7AAADc0lEQVRYhe2XDXPjJhCGty1gPoT4EEgmlqWornSyhZve//9zBefmZs5u2nPiTm86egbbIMHrRazYBWBlZeUHBeOvVZIK+bAgY1KBxrRgqCBeiGARQ5QCxf889g0TpVSy/LXklVSN5qXhXB2U9LKp3m2llWXppcWlTkJIldrb9IWktO+WXHkg5FK+g1f/RVedr9uZgEACHKoqpEajgFRV9p8mdXV7pn+rIbaXjmOdFU7ym9G04zeKrPK+EvDqhSG5vfRQCl0dUpPvtHtqYaqBcZwksQe0t4ImizlK970A+qkEza4MV1oYRhppEDBTKKi08ulRZCtpZ+t6K14M3497NE/nLuJ2njpOj+3Ro+l0NEXn5+n6RQuMpNlKrCswiCloAmvo68Sh7RfVqp2fZn4c6oWYTp96svT1GeLZnZjZ+u15e61IKxkaj7OIPgR1YFUBPnyRnJdJjOMT7Gvn+DyDf/InC+MwRnDTsADv+LHd3jzNgNPykEPhFRHCV+AVq9If9FnS7Vrofz9B36rWjvthmthRwXlQz33X+6fYzuKZD92NmRg0gFAha+BULZXOj/5yrzegewVgagWGm4ESp8FYkNGkLoPDqBek97d+tHILog+X3Jv7x+hz28NiIToeXetgMLHl+Wq+FOft6f7d/Xwuang2sAx201c7Xx9t3MAmug0dO8NPg7hb0m53NbxkSZk2nNbUaY/Y2A2GzqSth7TvmLhTxYYfo/402Bdpn3m9132y0vGNP0fAp/7+4Gvb0wxmO8detnEfYR7HtCS23fcw9+m9TC/g3ZBsRv6Yba6O86WRq5fEA38k+6Aqj+a3u/TK/wkSgkSPlRQlEZVOsTZ5I8memAsQ/Z0ZyF/BjFA6pLCrOQ9WBWmlrII08gPxRIayYmWSDD54raWmMnifstj3S8KXYLiysrKy8l9gHxzPsHObPx6bBw2ziv1FMqe7+RBLvs170defXESOnjrFluJtI6fFL22RrY2G28FaF2PK1bX31PsU37QCT0sNQQglsFdQcOU9F4c3ozL6bP04ewx8qIdhGpdYm88GVDChUpI3pjQgbbBESmUN0QZRyct0vm7eXgCnlDE5IaeCMSFYoUU66yBcIowwRggxKHCqYIYYB8Q0olhgSv4u37bGuQcvOSQLHqy48sPx88OBXx4O/PRw/gXJPwHFskSiO1V46QAAAABJRU5ErkJggg==)
+	GitHub
+
+Show all
+
+I'm not talking about webhooks. I was watching a video that explained agentic hooks. => https://www.youtube.com/watch?v=03CfGf9iw\_U&t=336s The video specifically talks about how, during a prompt, the process fires hooks at specific points, like at sessionStart, userPromptSubmitted, PreToolUse especially suggests that a hook is fired DURING the prompt stream.
+
+  
+Ollama does not natively support agentic lifecycle hooks like `sessionStart` or `preToolUse`, as these are implemented by external orchestrator code that handles streaming tool-call data. Instead of native server-side hooks, applications use libraries like LangChain or specialized frameworks to parse streamed JSON chunks, pausing the stream to execute logic upon detecting a `tool_calls` object. For a detailed explanation of where these agentic hooks reside in the architecture, watch this video: YouTube.
+
+- Streaming - Ollama's documentation
+	Key streaming concepts. Chatting: Stream partial assistant messages. Each chunk includes the content so you can render messages as...![](data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAFIAUQMBIgACEQEDEQH/xAAbAAADAAMBAQAAAAAAAAAAAAAAAQIEBQcDCP/EACcQAAICAgICAgICAwEAAAAAAAABAgMEEQUxEiEGE0FRgZEiMmEU/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AOHgB9JcB8P+P2cPxsZ8DgX0zox1bfOhSnZ51xcpOze1Lc0/S/HrQHzaBVqUbJxj0pNISAEUkItACKQIYAUkCHoBDGAGGZ9fNcpVjf8Amr5LNhj619Uciahr9a3owAACkhLopIBpFIEikgBFIBoBoYDAQFABgAuwGugGi0Si0A0UhIoBpFCRQAhiGAAAAYA0CNzjcpGvGgr+PrurhH61OXSfrra0n69/v2wNStLtlLT6ZuIc5XBR+rjMWHj7/wAf3/Qp8xXbDVnG4rl46Ute16a/X/dgatFJE9L3/Z6yrnVJwshKE13GUWmv4YCQwGgAYhgAAAGAujq3F81hQ+KcfHM5jEqpxaKUsenI8o2yjdGThbiSj/t2/ui10u96OUrouIHWs3J+I287GObTwlqyszNsnfTJOK14vH8mpaipb977e09LZ514nwqUuTc5cRGFsJRcPuj5VWKjalXLz1p2PqClpppy1pHLEUgOqX2fCLMuzHWJwccd5VtH2wk0/peN5qafl39v+Kl+OkLlsj4lk5XhY+MvWTTkK7Kla5W1uONU6vGfl6f2KSW9700cuRWgOh/PeI4zD+OvJwMDCx0uTqpxp0wsja6HRKWrfP35703+et/g58e2RmZeVCqGVlZF8KV41RttlJQX6im/X8HiAwAAAAADBRaEAFopDACkMAApDQgAYAAAAAB//9k=)
+	Ollama
+- 28 May 2025 — Ollama supports a wide range of models, some trained with tool-specific tokens and some without. The parsing logic would needs to...
+	![](data:image/jpeg;base64,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)
+	0:04
+	Ollama
+- Add native Ollama API provider for streaming + tool calling...
+	8 Feb 2026 — Implementation scope: \* Add "ollama" to the Api type union. \* Create native Ollama API client (request/response mapping) \* Handle...![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFIAAABSCAMAAADw8nOpAAAAjVBMVEX////a4/IAasEyeMYAAAD7+/v39/ft7e7X2Nn09PTv8PDl5eba29zT1NXOz9Do6Om/wMKipKbGx8hydXmEhIU/RUt9gIOUlplXW2CytLWpq622ur4RHScAABAhKjJrbnJLUFU3PUQrMzpiZmqKjZAAAAkAEh8ZIywAAhagpq0AChjA1fGfwe5NTE23v80CL7KoAAAFh0lEQVRYhe1YiXLbNhDdtiRugCAoEgBJ8bZku03///O6oJ2JrDRxEjvTY/REDmgcDwtgLxjghhtu+Lchf1F89v19oFxCQSwRnBKuZC4JF7yAotBCcCF+hLK02mnpbGtjx1wRmSujdY4p1rWudD9CaRhXTmlnlbFUOmOZZkpJx5ixWpsfobwCJ+9AcsNn0PbVLu76/PiuzgpHFh2Q2MUcXNcS6NrIsaGRoj/32cUo2VwxyPX5I8x0L+uIRuIeLOiHDpwC5UQH0qHqyA6bD0CzqI2AQqXREsD3Ai2DSEDzgJwhSwVFMge1nGMq8p0SCpQSqZghyJqDMtKSXSETZSIrp7DmzVwf6LKscQI38Lmq5DTOBimDxy5+9QHysIxTxJl3So4Lf+gecCNYC9B2D+KJ8ljXCxxLm5kulkPeDtDWiXLZoJn0Gj5KubTyJM0Jd6rzQD5KiSJKBw7/0Hqv26W0UvFjGUtTe7/kcYCyBjvwwcAYYhuRMoGd1rFv3QAwd9uzlEhpLHdKPHDKVcedu1h4aOLkTmXzKG3WusyHMz85sIsdPVI2uKxDbW01y37c+piEwQ0HgkOZVSAMegzUAQ07JfHpHEm7MbBeeQalh9bLlpQ4xmyoIRVE3PYW36LkyqOL+KrSNa/bOx9f7fICsX29S/l9lG+DEryRL2qsb3myFv8FL0w97l9XlqWA+HeGSzOZv6Rssmruqc6g/sLSfBYAxrlajrBWL5t4VaMqDGFtzKpgtHKacHqWLLveFFK2sNUNyttNFnUJ3BSSYmHjIGE8AGSuurL86NWdcUPser16mhUZM5kAd0Ltaaad0jRqLuV96Y/ldoLg/AJJuYsJRVmdz4rxitItobeil3xQse7q4hhCkGAy3IZ13CllHQYvz1T1xNxDNU+Jcqt1U0O1TMHCNeXsxb2lvS3OjJ9DC5mingOpgykzx5AyVlW+eNkX6sTdI9Z4tLt8ntZwYk9LXq8XPh8qtKrBTAqamoKt53Qgcl2mCGyGNZp59IFNhay5qfNQl4sBPaNzW0u/7Ufpr44u3x+yZxf7+5xmkKfGi+aPD3nu+dT6acR/GWr3POxFumXot47eA8o15uQpVHZJUu1R5RL6S+5nC3shjGCgY5E7AVqhy2SWPdJUA5oaAqrfaG4tASMMCq+jzLdZFwyjm+kEEGtz0IUxgH6WWXA5BsfjFMs+nBXa5SnO0WTreOJlsrd1mggchtqudR3yaVoxHD+WvamXJp5r06zNzEOoV8CmUxXupZ8gqwJacwG9hbC1k3wkdddUoO/EXPmlrfYFDp06co7mmhQ6nn2Ebkrhh54P/uSib444OHmX2WKUzHRyEAB9h7V0PoyAlCOYo5hL5eS4O6EhsjtBex3SNhMbM9thRJugOHfK6cyUxxR30bvUO6V6okwLl7DeWViizsJ65O18eDTrbhWnFlOJtPA0QXvnM+aOW6xz9CrNSWXNmkmUEs8VpZx2Sp5crLIYjKVJG40pB+BHqlG7B006ZLATK3Yt67AwhqaopfFkpAVLmUwDtZAMHP9Wjbvhhq/h2nW93UWjZutCS7Y/hjpj3nwjsxGTVdYpjTc9E7HQ8c0XNI6XXcrznBNCaHqLtzLecMOb8RNSpN8x7O3/unmydX6h6S9ne7YpjDMX9XjpBbwopt+n2j8wk6+sc3ZDk4y6Mm1UbWu1rZqmAcwqmFAScwuMW1IpBZag4VImpKKaCheBaseUMlZcUm6Vt00V/ORLX6kQ/Qf3oenaFbMEh3O5aFhrbbqyMgc4oVWOmRhRgtx1hFuG121lP11I/sQlS04EFQXlQlCQpGgiFQS/KeSCcRA54dgDCM8x5QZsynPBBecG27F7TklBLnzk/yCDveGfxi/vDvj13QG/vTt+AuVfj/1vCDeKubYAAAAASUVORK5CYII=)
+	GitHub
+
+Show all
+
+can you provide a guide here?
+
+The "agentic hooks" you're referring to are part of the Open WebUI Functions architecture. While Ollama itself is the engine that runs the models, **Open WebUI** acts as the agentic orchestrator that provides these lifecycle hooks.
+
+Core Agentic Hooks
+
+In Open WebUI, you implement these by creating a **Filter** or **Action** (written in Python). These functions automatically receive specific event triggers during the chat lifecycle:
+
+- **`inlet` (User Prompt Submitted):** Fires before the prompt is sent to Ollama. Use this to sanitize inputs, add RAG context, or modify the system prompt.
+- **`outlet` (Response Complete):** Fires after Ollama finishes generating. Use this for post-processing, such as auto-formatting or PII filtering.
+- **`action` (UI Trigger):** Adds custom buttons to the chat interface to trigger specific Python logic on demand.
+
+---
+
+Step-by-Step Implementation Guide
+
+To implement these hooks in your local environment, follow these steps:
+
+1\. Access the Workspace
+
+1. Open your Open WebUI interface (usually at `http://localhost:3000`).
+2. Navigate to **Workspace** in the sidebar.
+3. Select the **Functions** tab (this includes Filters, Actions, and Pipes).
+
+2\. Create a New Filter (The "Hook" Container)
+
+Click the **+** or **Create** button. You will see a code editor. Below is a boilerplate example of how to capture the hooks mentioned in your video:
+
+```
+from pydantic import BaseModel, Field
+from typing import Optional
+
+class Filter:
+    def __init__(self):
+        pass
+
+    # Hook: Fired when user submits a prompt (userPromptSubmitted)
+    async def inlet(self, body: dict, __user__: Optional[dict] = None) -> dict:
+        print(f"Hook fired: userPromptSubmitted")
+        # You can modify the prompt here: body['messages'][-1]['content']
+        return body
+
+    # Hook: Fired during/after the stream (outlet)
+    async def outlet(self, body: dict, __user__: Optional[dict] = None) -> dict:
+        print(f"Hook fired: responseGenerated")
+        return body
+```
+
+3\. Enable the Hook for a Model
+
+Hooks in Open WebUI are not global by default; they must be attached to a specific model:
+
+1. Go to **Workspace** > **Models**.
+2. Select the model you use with Ollama (e.g., `llama3`) and click **Edit**.
+3. Scroll to the **Filters** or **Functions** section.
+4. Toggle **On** the new function you just created.
+
+4\. Advanced: Intercepting Tool Use
+
+If you want to fire a hook specifically before a tool is used (**PreToolUse**), you should use the [Tools](https://docs.openwebui.com/features/extensibility/plugin/tools/) system. When a model like `qwen2.5` or `llama3.1` (which support native tool calling) decides to use a tool, Open WebUI intercepts that call, allowing you to run logic before the external API or script is executed.
+
+Summary of Hook Locations
+
+<table><tbody><tr><th colspan="undefined">Hook Name</th><th colspan="undefined">Open WebUI Equivalent</th><th colspan="undefined">Typical Use Case</th></tr><tr><td colspan="undefined"><strong>sessionStart</strong></td><td colspan="undefined"><code>__init__</code> or Valve logic</td><td colspan="undefined">Initializing API keys or logs</td></tr><tr><td colspan="undefined"><strong>userPromptSubmitted</strong></td><td colspan="undefined"><code>inlet</code> function</td><td colspan="undefined">Prompt injection or context enrichment</td></tr><tr><td colspan="undefined"><strong>PreToolUse</strong></td><td colspan="undefined">Tool function wrapper</td><td colspan="undefined">Validating or logging tool parameters</td></tr><tr><td colspan="undefined"><strong>ResponseStream</strong></td><td colspan="undefined"><code>outlet</code> function</td><td colspan="undefined">Live filtering or UI status updates</td></tr></tbody></table>
+
+Would you like a specific **Python script** for a "PreToolUse" hook to validate tool arguments?
+
+- Unlocking Local AI: Using Ollama with Agents - Langflow
+	26 Mar 2025 — Getting started with Ollama \* Step 1: Install the model. If you haven't used Ollama before, you'll need to install it locally firs...![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFIAAABSCAMAAADw8nOpAAAApVBMVEX////y8vLv7+/39/cAAAD6+vqqqqrn5+f/kI3Hz8+0tLTIyMjc3NzX19fwlZXS0tK/v7+enp6VlZX/w7+NjY2kpKR8fHz/gn+EhIR2dnYaGhr/089nZ2clJSUTExNOTk7/y8f/3do4ODhcXFz/i4X/gXj/tbD/em7/rKn/6+n/paD/LyD/HQP/NTD/9fSHkZFCQkLbr6tSX18RHB2mc27NnprvtK+zX74UAAADTklEQVRYhe2Y63rjJhCGOZghHaAcAo6llWxn7W3XaZtuj/d/aR3kZPfZjZMolv609StZyAc+MyOYARj7tyLPQw2VlTqlyIXg5zAo0hE4aroNaF3wRtAtl95J7q212murnXN6nKQcWgTMG3R0g8YgBmOqJNeec+dJ1Gk7lOMkjyabk4afyaPhJ1DnPR72/OO5cOHChQsX3o6hlKLtnIphFxjrNnNKJtd3mwxiRsn8nlrZrPV8inZ5LGe0vDj0sQSb58v7NutkdJYzttIVBhAd280nifRwBE16lvNJ8m4o1IyttPFYzulLPJYzGn7hvwxPSSlbI6Osp2QK6p0iPK1AhoWD99SrQNUPTy9KvsY7jKvs0a8AdM45QTQFY4rLXFarlDV0kAhVSlqmvFq9LqljgRKcKYmWazHbhMWTtAklAGKJGgMAoOEpZ4SU4xjLOROMXs7WWKFoTTm8BpiJstrLq8VCMQTGR0h+5hkvqWe/eR1w2nltaJ0baEFslDCOG+mjtuDOTGwAqxhjyAZiZxtyrcelaUxpVpBOrWdHgCmGgLnkCJAi2KANxlAiYECYkCx9qFeBc6bw/w9qGMbHricV9ezBjYoPn/G651MHPmOMf/ndK3i0dfvF+2Dr/ovVNhh0hkDtwCiPaDX1VEOHNW6MpLDBaqpvTPCehHSgO1KlC3V8+jNhvKiqhEczeiQJ/QhX9ao+v3/46vEXo4e4sg/7M1LXqyBX1rq1RTWk0EkuflPAYN4CDRyynnuGBlEgUtBUEGqMK1ZhcBDwTRNtjYb86MhZgVsurLKaU6TX1VohfHWDFW7UoLx9NPy4/aSUnDyjvN5fbadqPEFtrz78MLsqu7368eOBsft5VQ93H+5+2rLDfn/1hP3duarbn3857Glu+d03aHa9PVPyngy/kZvFE9Lt9bnNJPa/LvrNrl23bfupbdebvn/f94vfJkn+3rZNUycVOdFUIy02y77/48/tFMll23bNbtd1m65rmmb9qWn7xV9TJG9E+5Ub1/XsJvnyhkmEbzDs3TTJU0yWpIBEwZsyBYV6Ck9yBknOBR2S8pkUkks+g6SmdKMor+ngrXdOTZTcHxR7yDlWUPylnHmv2Md3L1YSL/P9Kf7mL1X5B+taNBNsFhtVAAAAAElFTkSuQmCC)
+	Langflow
+- Complete Guide to MCP + Ollama Tool Calling
+	12 Dec 2025 — The Three-Step Process: \* Discovery Phase ( load\_mcp\_tools ) Connects to MCP server. Gets list of available tools. Converts to Oll...![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFIAAABSCAMAAADw8nOpAAAAY1BMVEX///8REREAAAD09PTg4ODa2trFxcXOzs74+Pi8vLyYmJikpKTq6uq4uLjW1taUlJRubm5WVlarq6uenp5MTEyEhISysrIzMzM4ODhkZGRBQUErKyt6enqKiopeXl4YGBgeHh5kL2imAAADRUlEQVRYhe1Y2Y6jOhCtlPcF25glYAzp///KWyTpua2MNJnW8DAjcSQcbFUd1Y4VuBwO+Dco8XAAOxxw4sSJEyd+D+HrO23MywiVUgapPnf6ceZfWTTw5n+Vr+oIDb4I45y6/Cmubzunx+GV8cpC/LFr7NwPkMucaNOPk4FYZj041oa2N0RJVtuc26S21nRYSarrJ/3QsCVBW8vosMoBhlLvBruhBhQ31RXaKlzo8Skm65dwyUSHfd8M1hY/V+kY7i5f+CTZhTQ4hr5Z3Dh55LJVV58ocg3kIWqUV5A7JSwZxhbGWju2hIXvjgevibICr62DPSwB1ynxRcsisc5mUWFhyOSWN9AUlw1cXRnyKaZ+pywjRSpfx9hbVJc7JdlVY0wwOLcAZtrNJiMvayoMx9WjVB8as2n5JV8FMIRgpLY6dPVO6chyEQ2wLjvf7clfaTFSNnRkPZgOIAoKJxfdUIDHTK++A+lEBhUp16F7JmlOi3ktjF8jpaX5tYT4qdTe4fsafwT7qHb946CJz5baf316nupPAR7JvjzSswc3xq8Ry/Fue5/3ld3zuyNdHT7CZPzeKs/j9ZPb4AocW+jnSCU8Z9wT8ujHjQrFU6W1I0d0A/Z6wg3uZeNFbOEmeyPxA6HizRMJqkwPUU4LuOsmqDlHkTLklpTUvnDUMKywjVvTDvImJm97jnI3qy6dm2FSrZkkR4EiUVPbqtHTFACTWlFcGxZ9d2lD8vxCl8BATUBiCarbmpJsx69+LZ2lmkMOsboEhSiX4FGhteRWHBhqvlMWM6W9shnYkAZxH11yt9KTgymSm30elzWxZQgY9660uKKlXkPVm7XMCEvdyF+HYt6mlbJHzTKaAqkk9POzsh+DaPigIxAgOYiGgmXAN/cUiYZsVUp6RRmluGuzz0tNybq/eAlS0wKKZqv6TOoD6nXcnvhTeH/wAJAKCx7L6doMfz+llbf5YErPKJoH50dccTyW8cSJEye+jQDqvdB3wGGOUnpprLEwjn494rpw62Hg6xBqY+jK1b1XeAcGbYhrVwexmjGl8c2d/vcoOXAmvNeeac79Qdeko29bzHF59MfHQDi4iujKOvL3Ut+C1uefrSdO/B34DzdCLvfBJEf6AAAAAElFTkSuQmCC)
+	DEV Community
+- Tools - Open WebUI
+	Option 1: Enable on-the-fly (Specific Chat) While chatting, click the ➕ (plus) icon in the input area. You'll see a list of avail...![](data:image/png;base64,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)
+	Open WebUI
+
+Show all
+
+does this mean that hooks aren't native to the model provider but just a script convention within the agentic UIs?
+
+Yes, your understanding is correct. Hooks are **not native** to the model provider (Ollama) or the model itself. Instead, ==they are a **scripting convention** and architectural feature of the **Agentic UI** or orchestration layer==.
+
+Why Hooks aren't in Ollama
+
+Ollama is a **model runner** —its job is to load a model and provide an API for text generation and tool-calling. It is essentially "stateless" and reactive: it receives a prompt and sends a response. It has no internal concept of a "session start" or "user submitted" event; it only sees an incoming HTTP request.
+
+The Role of Agentic UIs (Open WebUI)
+
+Platforms like **[Open WebUI](https://docs.openwebui.com/)** or **LangChain** sit between the user and Ollama. They create the "hooks" by wrapping the Ollama API calls in their own application logic.
+
+- **Hook Simulation:** When you click "Send," the UI script fires its own `userPromptSubmitted` hook *before* it even sends the data to Ollama.
+- **Intercepting Streams:** During a stream, the UI monitors the incoming chunks. If it sees a tool-call request, it pauses the flow and fires a `PreToolUse` hook before actually executing the tool.
+- **Orchestration:** These hooks exist to let developers inject logic (like guardrails, logging, or RAG) without modifying the underlying model or the Ollama binary.
+
+Summary Comparison
+
+<table><tbody><tr><th colspan="undefined">Feature</th><th colspan="undefined">Model Runner (Ollama)</th><th colspan="undefined">Agentic UI (Open WebUI)</th></tr><tr><td colspan="undefined"><strong>Primary Job</strong></td><td colspan="undefined">Inference (Running the model)</td><td colspan="undefined">Orchestration (Managing the flow)</td></tr><tr><td colspan="undefined"><strong>Native Hooks?</strong></td><td colspan="undefined"><strong>No</strong> (It only has API endpoints)</td><td colspan="undefined"><strong>Yes</strong> (Through Filters/Actions)</td></tr><tr><td colspan="undefined"><strong>Logic Type</strong></td><td colspan="undefined">Non-deterministic (AI response)</td><td colspan="undefined">Deterministic (Python scripts/hooks)</td></tr><tr><td colspan="undefined"><strong>Example</strong></td><td colspan="undefined"><code>llama3.1</code> generates text</td><td colspan="undefined"><code>inlet</code> hook sanitizes that text</td></tr></tbody></table>
+
+In short, "hooks" are the **glue** provided by the interface to make a simple model runner act like a sophisticated agent.
+
+Would you like to see how to **manually implement** a hook using a simple Python script without using a heavy UI?
+
+- Ollama + Open WebUI For Local AI + Self-Hosted AI (API, VPS)
+	22 Feb 2025 — there are many good reasons for wanting to run these AI models locally on your own computer for example it can be much cheaper it...![](data:image/jpeg;base64,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)
+	12:19
+	YouTube·ByteGrad
+- Open WebUI + Ollama Is AMAZING For AI Self-Hosting (RAG...
+	22 Dec 2025 — hey everyone in this video we're going to talk all about self-hosting AI and in particular. using open web UI. so there are many r...![](data:image/jpeg;base64,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)
+	22:55
+	YouTube·ByteGrad
+- Is Open Webui The Ultimate Ollama Frontend Choice?
+	26 Apr 2024 — hi I'm Matt one of the unique aspects of O Lama is its dual nature as both an enduser tool and a developer tool with an API endpoi...![](data:image/jpeg;base64,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)
+	16:43
+	YouTube·Matt Williams
+
+Show all
+
+ok, tell me more about how to monitor "incoming chunks"
+
+To monitor "incoming chunks," you essentially create a **loop** that iterates over the response as it is being delivered, rather than waiting for the entire block of text to arrive.
+
+In agentic UIs like **Open WebUI**, this loop is where the magic happens. The system inspects every single JSON object (chunk) that Ollama sends to decide if it should keep printing text, pause for a tool, or fire an "agentic hook."
+
+1\. The Structure of a Chunk
+
+When you stream from Ollama, each chunk is a small JSON object. A typical chunk looks like this:
+
+```
+{
+  "model": "llama3.2",
+  "message": {
+    "role": "assistant",
+    "content": "The",
+    "thinking": "",
+    "tool_calls": null
+  },
+  "done": false
+}
+```
+
+- **`content`**: The actual word or character just generated.
+- **`thinking`**: For models with reasoning (like DeepSeek), this contains the "thought process" before the final answer.
+- **`tool_calls`**: This is the **critical hook point**. If this field is populated (not null), the agentic UI sees it and pauses the stream to execute your tool.
+- **`done`**: When this becomes `true`, the final chunk arrives with performance metrics like `total_duration`.
+
+2\. How to Monitor Chunks (Python Example)
+
+If you aren't using a UI and want to build your own "hooks," you do it by iterating over the stream in real-time using the Ollama Python SDK.
+
+```
+import ollama
+
+# We call chat with stream=True
+stream = ollama.chat(
+    model='llama3.1',
+    messages=[{'role': 'user', 'content': 'What is 17 x 23?'}],
+    stream=True,
+)
+
+for chunk in stream:
+    # 1. Monitoring Text (for UI updates)
+    print(chunk['message']['content'], end='', flush=True)
+
+    # 2. "PreToolUse" Hook Logic
+    if chunk['message'].get('tool_calls'):
+        print("\n[HOOK] Model wants to use a tool. Pausing stream...")
+        # Your custom logic here (e.g., asking for user permission)
+        break 
+
+    # 3. "ResponseComplete" Hook Logic
+    if chunk.get('done'):
+        print(f"\n[HOOK] Generation finished in {chunk['total_duration']}ns")
+```
+
+3\. Why UIs "Monitor" These Chunks
+
+- **PreToolUse Interception:** The UI doesn't just pass the tool call through; it catches it, runs its own internal Python "Function" (the hook), and only then sends the result back to the model.
+- **Live Filtering:** If a chunk contains a banned word (PII or restricted content), the UI can "kill" the stream immediately before the user sees the rest of the sentence.
+- **State Management:** The UI must "accumulate" these chunks into a single message history to keep the conversation coherent for the next turn.
+
+Would you like a script that specifically **intercepts and modifies** a chunk before it hits the screen?
+
+- 28 May 2025 — An example of Ollama using a mathematical function: # Define the python function def add\_two\_numbers(a: int, b: int) -> int: """ A...
+	![](data:image/jpeg;base64,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)
+	0:04
+	Ollama
+- Streaming - Ollama - Mintlify
+	9 Dec 2024 — Streaming with tool calling. When streaming with tool calls, accumulate all chunks of thinking, content, and tool\_calls, then r...
+	Mintlify
+- Streaming - Ollama's documentation
+	Copy page. Streaming allows you to render text as it is produced by the model. Streaming is enabled by default through the REST AP...![](data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAFIAUQMBIgACEQEDEQH/xAAbAAADAAMBAQAAAAAAAAAAAAAAAQIEBQcDCP/EACcQAAICAgICAgICAwEAAAAAAAABAgMEEQUxEiEGE0FRgZEiMmEU/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AOHgB9JcB8P+P2cPxsZ8DgX0zox1bfOhSnZ51xcpOze1Lc0/S/HrQHzaBVqUbJxj0pNISAEUkItACKQIYAUkCHoBDGAGGZ9fNcpVjf8Amr5LNhj619Uciahr9a3owAACkhLopIBpFIEikgBFIBoBoYDAQFABgAuwGugGi0Si0A0UhIoBpFCRQAhiGAAAAYA0CNzjcpGvGgr+PrurhH61OXSfrra0n69/v2wNStLtlLT6ZuIc5XBR+rjMWHj7/wAf3/Qp8xXbDVnG4rl46Ute16a/X/dgatFJE9L3/Z6yrnVJwshKE13GUWmv4YCQwGgAYhgAAAGAujq3F81hQ+KcfHM5jEqpxaKUsenI8o2yjdGThbiSj/t2/ui10u96OUrouIHWs3J+I287GObTwlqyszNsnfTJOK14vH8mpaipb977e09LZ514nwqUuTc5cRGFsJRcPuj5VWKjalXLz1p2PqClpppy1pHLEUgOqX2fCLMuzHWJwccd5VtH2wk0/peN5qafl39v+Kl+OkLlsj4lk5XhY+MvWTTkK7Kla5W1uONU6vGfl6f2KSW9700cuRWgOh/PeI4zD+OvJwMDCx0uTqpxp0wsja6HRKWrfP35703+et/g58e2RmZeVCqGVlZF8KV41RttlJQX6im/X8HiAwAAAAADBRaEAFopDACkMAApDQgAYAAAAAB//9k=)
+	Ollama
+
+Show all
+
+is there a nodejs example?
+
+In Node.js, you can monitor incoming chunks using an `async` iterator with the official Ollama JavaScript library. This allows you to intercept data at every stage of the response life cycle.
+
+Monitoring Chunks with Node.js
+
+This example demonstrates how to implement manual "hooks" by inspecting each `chunk` as it arrives from the [Ollama Chat API](https://docs.ollama.com/api/chat).
+
+```
+import ollama from 'ollama';
+
+async function chatWithHooks() {
+  const response = await ollama.chat({
+    model: 'llama3.1',
+    messages: [{ role: 'user', content: 'What is 15 * 12?' }],
+    stream: true,
+  });
+
+  // This loop acts as your monitoring engine
+  for await (const chunk of response) {
+    
+    // 1. Hook: Pre-Content / Thinking (For reasoning models)
+    if (chunk.message.thinking) {
+      process.stdout.write(\`[THINKING]: ${chunk.message.thinking}\`);
+    }
+
+    // 2. Hook: User Content (The actual response)
+    if (chunk.message.content) {
+      process.stdout.write(chunk.message.content);
+    }
+
+    // 3. Hook: PreToolUse Interception
+    // If the model decides to use a tool, this field will be populated
+    if (chunk.message.tool_calls) {
+      console.log("\n[HOOK]: PreToolUse detected!");
+      for (const tool of chunk.message.tool_calls) {
+        console.log(\`Model wants to call: ${tool.function.name}\`);
+        // You can run custom validation logic here
+      }
+    }
+
+    // 4. Hook: Session/Request Complete
+    if (chunk.done) {
+      console.log(\`\n[HOOK]: Response Finished. Stats: ${chunk.total_duration}ns\`);
+    }
+  }
+}
+
+chatWithHooks();
+```
+
+Key Differences from Python
+
+- **Syntax**: Node.js uses `for await...of` to handle the [ReadableStream](https://www.sitepoint.com/ollama-javascript-developers/) natively, whereas Python uses a standard generator loop.
+- **Output**: In Node.js environments, use `process.stdout.write()` instead of `console.log()` if you want the text to appear word-by-word without forced newlines.
+
+Why this matters for "Agentic Hooks"
+
+By monitoring `chunk.message.tool_calls`, you can pause the entire process before any external action is taken. This is exactly how "Agentic UIs" like [Open WebUI](https://docs.openwebui.com/features/extensibility/plugin/tools/) implement their safety checks and human-in-the-loop approvals.
+
+Would you like a more advanced example that **blocks a tool call** unless you type "Y" in the terminal?
+
+- 28 May 2025 — An example of Ollama using a mathematical function: import ollama from 'ollama'; # Describe the tool schema const addTool = { type...
+	![](data:image/jpeg;base64,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)
+	0:04
+	Ollama
+- Ollama for JavaScript Developers - SitePoint
+	25 Feb 2026 — How to Use Ollama with JavaScript and Node. js. Install Ollama from ollama.com and pull a model such as llama3. 2:3b. Verify the...![](data:image/jpeg;base64,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)
+	SitePoint
+- Streaming - Ollama's documentation
+	}\], stream=True, ) in\_thinking = False content = '' thinking = '' for chunk in stream: if chunk.message.thinking: if not in\_thinki...![](data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAFIAUQMBIgACEQEDEQH/xAAbAAADAAMBAQAAAAAAAAAAAAAAAQIEBQcDCP/EACcQAAICAgICAgICAwEAAAAAAAABAgMEEQUxEiEGE0FRgZEiMmEU/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AOHgB9JcB8P+P2cPxsZ8DgX0zox1bfOhSnZ51xcpOze1Lc0/S/HrQHzaBVqUbJxj0pNISAEUkItACKQIYAUkCHoBDGAGGZ9fNcpVjf8Amr5LNhj619Uciahr9a3owAACkhLopIBpFIEikgBFIBoBoYDAQFABgAuwGugGi0Si0A0UhIoBpFCRQAhiGAAAAYA0CNzjcpGvGgr+PrurhH61OXSfrra0n69/v2wNStLtlLT6ZuIc5XBR+rjMWHj7/wAf3/Qp8xXbDVnG4rl46Ute16a/X/dgatFJE9L3/Z6yrnVJwshKE13GUWmv4YCQwGgAYhgAAAGAujq3F81hQ+KcfHM5jEqpxaKUsenI8o2yjdGThbiSj/t2/ui10u96OUrouIHWs3J+I287GObTwlqyszNsnfTJOK14vH8mpaipb977e09LZ514nwqUuTc5cRGFsJRcPuj5VWKjalXLz1p2PqClpppy1pHLEUgOqX2fCLMuzHWJwccd5VtH2wk0/peN5qafl39v+Kl+OkLlsj4lk5XhY+MvWTTkK7Kla5W1uONU6vGfl6f2KSW9700cuRWgOh/PeI4zD+OvJwMDCx0uTqpxp0wsja6HRKWrfP35703+et/g58e2RmZeVCqGVlZF8KV41RttlJQX6im/X8HiAwAAAAADBRaEAFopDACkMAApDQgAYAAAAAB//9k=)
+	Ollama
+
+Show all
+
+yes. I want a full in-depth guide on how to setup hooks. I want to develop my own agentic UI. Break down this query into all the topics regarding setting up hooks, and let's debate them one by one
+
+Building your own agentic UI requires moving beyond simple "chat" and into **lifecycle management**. Because LLMs are non-deterministic, your UI acts as a supervisor that traps events before they reach the user or the external world.
+
+To build this architecture, we need to break the development down into **five core pillars**. Each pillar represents a specific stage where "hooks" are injected.
+
+---
+
+The 5 Pillars of Agentic Hook Architecture
+
+1\. The Inlet Hook (Pre-Processing)
+
+- **The Concept:** Intercepting the user's message *before* it is sent to Ollama.
+- **Capabilities:** Prompt injection (RAG), intent classification, PII masking, or translating the user's request.
+- **Debate Point:** Should the UI modify the user's prompt transparently, or should it create a "hidden" system message to guide the model?
+
+2\. The Stream Monitor (Chunk Interception)
+
+- **The Concept:** The logic that watches the raw NDJSON stream from Ollama in real-time.
+- **Capabilities:** Detecting the transition from "thinking" to "answering," or identifying the moment a `tool_calls` object appears in the stream.
+- **Debate Point:** Is it better to buffer chunks to check for "hallucinated tools," or stream everything immediately for maximum speed (low latency)?
+
+3\. The Pre-Tool Hook (Human-in-the-Loop)
+
+- **The Concept:** A "gatekeeper" function that fires when the model requests a tool but *before* the code actually runs.
+- **Capabilities:** Permissions (Allow/Deny), argument validation (e.g., ensuring a "delete" command has a valid ID), and cost estimation.
+- **Debate Point:** How do you handle "UI State" when a tool is paused? (e.g., Do you show the user the raw JSON or a pretty "Accept" button?)
+
+4\. The Tool-Execution Hook (Action Layer)
+
+- **The Concept:** The actual execution of the JavaScript/Python function requested by the model.
+- **Capabilities:** Mapping the model's string-based request (e.g., `get_weather`) to your real code implementation.
+- **Debate Point:** Should tools run in the same process as the UI, or should they be isolated in Docker containers for security?
+
+5\. The Outlet Hook (Post-Processing)
+
+- **The Concept:** The final check after the model has finished its entire thought process.
+- **Capabilities:** Fact-checking the answer against a database, formatting the output into Markdown/Tables, or logging the final token usage.
+- **Debate Point:** If the outlet hook finds an error, should it "invisible-retry" (ask the model to fix it) or just show an error to the user?
+
+---
+
+How we should proceed
+
+To keep this productive, we should tackle these in order of "data flow."
+
+**Which pillar do you want to debate first?** I recommend starting with **Pillar 2: The Stream Monitor**, as it is the technical foundation of how your Node.js backend will "catch" events in real-time.
+
+Show all
+
+Are we skipping pillar 1 for later or did we already cover it? If you're going to proceed in out-of-order, then, re-order the pillars so that we can just address them in order
+
+You're right—let's stick to the logical flow of a request. We haven't covered **Pillar 1** in depth yet; I only mentioned it as a concept.
+
+To build an agentic UI, you have to follow the **Lifecycle of a Prompt**. Here is the re-ordered list reflecting exactly how a message travels through your code:
+
+1. **Pillar 1: The Inlet Hook (Pre-Inference)** – Logic that runs *before* the request hits Ollama.
+2. **Pillar 2: The Stream Monitor (Live-Interception)** – Logic that watches the real-time "chunks" as they arrive.
+3. **Pillar 3: The Pre-Tool Hook (Gatekeeping)** – The pause button: validating or approving tool calls.
+4. **Pillar 5: The Tool Execution (Action Layer)** – Actually running the code the model requested.
+5. **Pillar 4: The Outlet Hook (Post-Inference)** – Final cleanup and "sanity checks" before the user sees the result.
+
+---
+
+Pillar 1: The Inlet Hook (Pre-Inference)
+
+This is the most powerful place for "steering" the agent. In your Node.js backend, this hook sits between the User’s `POST` request and the `ollama.chat()` call.
+
+The Core Capabilities:
+
+- **Context Injection (RAG):** Fetching data from a database and injecting it into the system prompt.
+- **Safety Filtering:** Checking for banned topics before wasting GPU cycles.
+- **Persona Enforcement:** Forcing a specific "agentic" identity regardless of what the user asks.
+
+The Debate: Prompt Modification vs. System Message Injection
+
+This is a critical design choice for your UI:
+
+- **Option A: Modify the User’s String.** You take the user's input "What's the weather?" and rewrite it to "You are a weather bot. The user wants the weather for NYC. \[Detailed Context\]... Answer: What's the weather?"
+	- *Pro:* Very easy to implement.
+		- *Con:* It "pollutes" the chat history. If the user sees their own message rewritten, it's a bad UX.
+- **Option B: System Message Injection.** You leave the user’s message alone but programmatically insert a `role: 'system'` message at the top of the array or right before the last user message.
+	- *Pro:* Cleaner history. Higher "instruction following" in modern models (Llama 3, Qwen).
+		- *Con:* If you add too much "system" context every turn, you hit the context window limit faster.
+
+**How do you want your Agentic UI to handle this?** Should it be a "Hidden System Prompt" that the user never sees, or do you want the UI to explicitly show the "Augmented Prompt" so the user knows why the agent is acting a certain way?
+
+Show all
+
+Augmented. I want full transparency by default, with configurable options that I can then refine
+
+Choosing **full transparency (Augmented Prompting)** is the "Power User" approach. It prevents the "magic black box" feeling and allows for better debugging—if the agent hallucinates, the user can see if it was because the injected context was garbage.
+
+Pillar 1: The Inlet Hook (Implementation)
+
+To build this in your Node.js backend, you need a middleware pattern. Before the data reaches the `ollama.chat` stream, it must pass through your **Inlet Hook**.
+
+The Logic Flow:
+
+1. **Intercept** the raw user message.
+2. **Apply Hooks** (e.g., fetch RAG data, attach system instructions).
+3. **Update the UI State** so the user sees the "Augmented" version (perhaps in an expandable "System Context" accordion).
+4. **Pass** the modified array to Ollama.
+
+Node.js Code Pattern:
+
+```
+// This is your Inlet Hook function
+async function inletHook(userMessage, history, options) {
+  let augmentedContent = userMessage;
+
+  // 1. Transparent RAG Hook (Example)
+  if (options.useRAG) {
+    const context = await fetchContext(userMessage); // Your DB search
+    augmentedContent = \`Context from Database: ${context}\n\nUser Question: ${userMessage}\`;
+  }
+
+  // 2. Persona Hook
+  const systemMessage = { 
+    role: 'system', 
+    content: 'You are a technical assistant. Use the provided context to answer.' 
+  };
+
+  // Construct the final payload
+  // We return both the "To Send" version and the "To Display" version
+  return {
+    messagesForOllama: [systemMessage, ...history, { role: 'user', content: augmentedContent }],
+    displayContent: augmentedContent // This is what your UI will render in the 'User' bubble
+  };
+}
+```
+
+---
+
+The Debate: The "Editability" Problem
+
+Since you want full transparency, we hit a major architectural crossroads regarding **Refinement**:
+
+**Scenario:** The Inlet Hook fires, performs a RAG search, and augments the prompt with 3 paragraphs of text. The user sees this and thinks, *"Wait, that second paragraph of context is wrong, it's going to confuse the AI."*
+
+1. **Option A: Immediate Execution.** The hook augments the prompt and immediately hits Ollama. The user sees the augmentation *as* it's happening or after.
+	- *Issue:* No chance to correct the "Inlet" before the model starts thinking.
+2. **Option B: The "Draft" State.** The hook runs, updates the UI with the augmented prompt, but **pauses**. The user must hit "Confirm" or edit the augmented text before it is sent to the model.
+	- *Issue:* Adds friction. Every prompt requires two clicks.
+
+**For your UI, do you want the Inlet Hook to be "Auto-Submit" (fast) or "Review-First" (precise)?** Or perhaps a hybrid where it only pauses if the augmentation exceeds a certain "confidence" threshold?
+
+Show all
+
+I want both in code, configurable.
+
+This dual-mode approach is the hallmark of a professional "Agentic IDE." You are essentially building a **Human-in-the-Loop (HITL)** pipeline.
+
+To implement this in Node.js, your backend needs to handle two distinct "Submit" flows: one that goes all the way to the model, and one that stops halfway to return a "Draft" to the UI.
+
+Pillar 1: The Implementation (Node.js)
+
+Here is how you structure the **Inlet Hook** to support both **Auto-Submit** and **Review-First** modes.
+
+```
+// The core logic for augmentation
+async function processInlet(userRequest) {
+    const { text, history, settings } = userRequest;
+    
+    // 1. Run Augmentation (e.g., RAG or Template injection)
+    const context = settings.useRAG ? await getVectorContext(text) : "";
+    const augmentedText = \`[CONTEXT]: ${context}\n\n[USER]: ${text}\`;
+    
+    const payload = {
+        role: 'user',
+        content: augmentedText,
+        isAugmented: true
+    };
+
+    return payload;
+}
+
+// The API Route Handler
+app.post('/api/chat', async (req, res) => {
+    const { message, history, settings } = req.body;
+
+    // Trigger the Inlet Hook
+    const augmentedMessage = await processInlet(req.body);
+
+    // MODE 1: Review-First (Draft)
+    if (settings.mode === 'review') {
+        return res.json({
+            status: 'draft',
+            data: augmentedMessage, // Send back to UI for editing/confirmation
+            history: history
+        });
+    }
+
+    // MODE 2: Auto-Submit
+    // Proceed directly to the next pillar (The Stream Monitor)
+    return startOllamaStream(augmentedMessage, history, res);
+});
+```
+
+The Architectural Debate: State Management
+
+Now that we have the code structure, we face a "State" problem for your UI. When you use **Review-First (Draft)**, the flow of information changes:
+
+1. **The Conflict:** If a user edits the "Augmented" prompt, do you save the **original** user intent ("What's the weather?") or the **edited** augmentation ("What's the weather in London with Celsius units?") to the chat history?
+2. **The "Branching" Issue:** If the user edits the Inlet's output, they are essentially taking over the "Agent's" logic. If the model then fails, is it because the Agent's hook was bad, or the User's edit was bad?
+
+**My Recommendation for your UI:**  
+You should store **both**. In your database/state, keep a `raw_input` field and a `final_delivered_prompt` field. This allows you to "Reset to Original" if the user messes up their edit.
+
+---
+
+Moving to Pillar 2: The Stream Monitor (Live-Interception)
+
+Once the Inlet Hook is cleared (either automatically or by a user "Confirm" click), the message hits Ollama. Now we enter **Pillar 2**.
+
+In this stage, your Node.js code isn't just a pipe; it’s an **Observer**. It scans every incoming byte for specific "Triggers."
+
+**The Core Debate for Pillar 2:**  
+When monitoring the stream, how do you handle **"Thinking" blocks** vs. **"Response" blocks**?
+
+- **Option A: Unified Stream.** You stream everything (Thinking + Content) into one window.
+- **Option B: Split Windows.** You detect the `<thought>` tags (or the `thinking` field in new Ollama versions) and pipe them to a separate "Brain" UI element, only showing the "Final Answer" in the main chat bubble.
+
+**For your UI, do you want the "Agent's thoughts" to be a separate, collapsible UI element, or just part of the text stream?** (This determines how you write your chunk-parsing regex/logic).
+
+Show all
+
+thinking should be a separate element, so that we can implement collapsible UI or whatever. But, concept-wise, it should be a separate element from the actual output text.
+
+Separating "Thinking" from "Content" is a major UX win. It prevents the user from confusing the model's internal monologue with its final answer. Since Ollama is increasingly supporting models with native thinking (like DeepSeek R1), your **Stream Monitor** needs to be a **Router**.
+
+Pillar 2: The Stream Monitor (The Router)
+
+In Node.js, you will implement a "Stateful Stream Parser." As chunks come in, the monitor decides which "channel" to broadcast to.
+
+The Logic Flow:
+
+1. **Initialize State:** `isThinking = false`.
+2. **Monitor Chunks:** Look for the `thinking` field in the JSON or specific tags like `<thought>` in the `content`.
+3. **Route Data:**
+	- If chunk is "thought," emit to `thinking-channel`.
+		- If chunk is "content," emit to `output-channel`.
+
+Node.js Implementation Example:
+
+```
+async function monitorStream(response, socket) {
+    let fullResponse = "";
+    
+    for await (const chunk of response) {
+        // 1. Hook: Thinking Router
+        // Modern Ollama versions provide a distinct 'thinking' field
+        if (chunk.message.thinking) {
+            socket.emit('thinking-chunk', chunk.message.thinking);
+        } 
+        
+        // 2. Hook: Content Router
+        if (chunk.message.content) {
+            // Some models put thoughts inside <thought> tags in the content
+            // You can use a simple regex or state toggle to catch these
+            socket.emit('content-chunk', chunk.message.content);
+        }
+
+        // 3. Hook: Metadata (Pillar 4 preview)
+        if (chunk.done) {
+            socket.emit('stream-complete', { metrics: chunk.total_duration });
+        }
+    }
+}
+```
+
+---
+
+The Debate: The "Intervention" Hook
+
+Since you are building an *agentic* UI, the Stream Monitor isn't just for routing text—it’s for **Early Termination.**
+
+**The Scenario:**  
+The model starts "Thinking" and you see it going down a completely wrong path (e.g., it starts trying to delete your root directory instead of just finding a file).
+
+1. **Option A: Passive Monitor.** The UI shows the thinking, and the user has to manually hit a "Stop" button.
+2. **Option B: Active Watchdog.** You define a "Kill-Switch Hook." If the Thinking block contains certain keywords or patterns, your Node.js backend **automatically closes the connection** to Ollama before it even starts generating the final "Content" or "Tool Call."
+
+**The Technical Debate:**  
+If you implement an **Active Watchdog**, does it live in the **UI** (Frontend) or the **Monitor** (Backend)?
+
+- **Backend Watchdog:** Faster, more secure, can prevent tool execution before the browser even knows about it.
+- **Frontend Watchdog:** Gives the user "Flashlight" visibility into why the stream was killed.
+
+**For your architecture, do you want the "Auto-Kill" hooks to be server-side rules (e.g., "Never let the model talk about X") or user-defined triggers in the browser?**
+
+**Proactive Follow-up:** Should we look at a **RegEx-based Watchdog** script for the backend to see how to kill a stream mid-thought?
+
+Show all
+
+I want both options, so we can configure them.
+
+Setting up both **Server-Side Rules** (hard guardrails) and **User-Defined Triggers** (customizable UI alerts) requires a multi-layered watchdog. This ensures that the system is both secure by default and flexible for the user.
+
+Pillar 2: The Watchdog Monitor (Implementation)
+
+To support both, your Node.js monitor needs a `shouldTerminate` check inside the stream loop. This check evaluates the "thinking" or "content" against a set of rules.
+
+The Dual-Watchdog Logic:
+
+1. **Server Rules:** Hardcoded or environment-loaded RegEx (e.g., preventing data exfiltration or specific commands).
+2. **User Triggers:** Dynamic rules sent from the frontend (e.g., "Stop if the model mentions 'Budget'").
+
+```
+// Example Watchdog Logic
+const SERVER_GUARDRAILS = [
+    /rm -rf \//g,             // Prevent accidental disk wipe commands
+    /sudo\s+/g                // Prevent privilege escalation thoughts
+];
+
+async function monitorWithWatchdog(response, socket, userTriggers = []) {
+    for await (const chunk of response) {
+        const thought = chunk.message.thinking || "";
+        const content = chunk.message.content || "";
+        const combined = thought + content;
+
+        // 1. Check Server-Side Guardrails (Hard Kill)
+        const violatesServer = SERVER_GUARDRAILS.some(regex => regex.test(combined));
+        if (violatesServer) {
+            socket.emit('error', 'Security Violation: Stream terminated by Server Watchdog.');
+            return; // This physically breaks the loop and closes the Ollama connection
+        }
+
+        // 2. Check User-Defined Triggers (Soft/Configurable Kill)
+        const violatesUser = userTriggers.some(trigger => combined.includes(trigger));
+        if (violatesUser) {
+            socket.emit('watchdog-alert', { 
+                reason: 'User trigger matched.',
+                match: combined 
+            });
+            // You can decide here: Auto-kill or just flag it in the UI
+            if (settings.autoKillOnUserTrigger) return; 
+        }
+
+        // 3. Normal Routing
+        if (thought) socket.emit('thinking-chunk', thought);
+        if (content) socket.emit('content-chunk', content);
+    }
+}
+```
+
+---
+
+The Debate: The "False Positive" Dilemma
+
+When you implement an **Active Watchdog**, you inevitably run into **False Positives**.
+
+**The Scenario:**  
+You have a rule against the model discussing "Private Keys." However, the model is currently "Thinking" about why it *shouldn't* ask for a private key: *"I should make sure I don't ask the user for their private key..."*
+
+The Watchdog sees "private key" in the thinking stream and kills the connection instantly.
+
+1. **Option A: The "Context-Aware" Watchdog.** Instead of simple RegEx, you send the "Thinking" block to a smaller, faster model (like `tinydolphin`) to ask: "Is this model about to do something bad?"
+	- *Pro:* Much more accurate.
+		- *Con:* Adds latency and doubles your inference cost/load.
+2. **Option B: The "Graceful Pause".** Instead of killing the stream, the backend "buffers" the suspicious chunks and sends a `confirm-continue` signal to the UI. The stream is paused on the server, but the connection stays open.
+	- *Pro:* No lost work; the user decides.
+		- *Con:* Technically complex to "pause" a live HTTP stream from Ollama without timing out.
+
+**How do you want to handle "Suspicious" thoughts?** Should the backend be an **Executioner** (Kill immediately) or a **Bailiff** (Pause and ask the user)?
+
+**Proactive Follow-up:** Do you want to see the code for **Pillar 3: The Pre-Tool Hook**, where we handle the ultimate "Pause and Ask" moment for tool execution?
+
+Show all
+
+watchdog might require further debate, but, if it isn't immediately relevant to the hooks setup, I can handle this debate in its own session.
+
+Fair enough. We can park the "Watchdog Ethics" debate for later. Since the Watchdog is essentially a **conditional logic gate** within the stream, you now have the blueprint for it.
+
+Let's move to the most critical part of an agentic system: **Pillar 3: The Pre-Tool Hook (Gatekeeping)**.
+
+Pillar 3: The Pre-Tool Hook
+
+This hook fires the moment the **Stream Monitor** (Pillar 2) detects a `tool_calls` object in the Ollama response. Unlike text, which you can just print, a tool call is an **intent to act**.
+
+The Logic Flow:
+
+1. **Detection:** The monitor sees `tool_calls` in the chunk.
+2. **Interception:** The backend **immediately stops** the generation flow.
+3. **The Hook:** It broadcasts the tool name and arguments to the UI/Server-logic.
+4. **The Gate:** It waits for a `RESUME` or `ABORT` signal.
+
+Why this is a "Hook":
+
+In a standard UI, the model calls a tool and it just runs. In an **Agentic UI**, the `PreToolUse` hook allows you to:
+
+- **Modify Arguments:** If the model tries to search for "current weather in `{{USER_HOME}}` ", you can swap the variable for the actual path.
+- **Permission Check:** Display a "The Agent wants to read your files. Allow?" prompt.
+
+Node.js Implementation Example:
+
+```
+// Inside your Stream Monitor loop
+if (chunk.message.tool_calls) {
+    const toolCall = chunk.message.tool_calls[0]; // Simplified for 1 tool
+    
+    // FIRE THE HOOK
+    const approvalNeeded = checkPermissions(toolCall.function.name);
+
+    if (approvalNeeded) {
+        // 1. Notify UI that we are "Pending Approval"
+        socket.emit('tool-approval-request', {
+            id: toolCall.id,
+            name: toolCall.function.name,
+            args: toolCall.function.arguments
+        });
+
+        // 2. PAUSE: Wait for user input via a Promise/Event
+        const userDecision = await waitForUserDecision(toolCall.id); 
+        
+        if (userDecision.status === 'denied') {
+            socket.emit('tool-cancelled', 'User denied tool execution.');
+            return; // Kill the process
+        }
+        
+        // 3. Optional: Use modified arguments from the user
+        if (userDecision.modifiedArgs) {
+            toolCall.function.arguments = userDecision.modifiedArgs;
+        }
+    }
+    
+    // Proceed to Pillar 5 (Execution)
+    return executeTool(toolCall);
+}
+```
+
+---
+
+The Debate: The "Multi-Tool" Race Condition
+
+Modern models (like Llama 3.1) can emit **multiple tool calls at once** (Parallel Tool Calling). For example: "Search for the weather in London AND Paris."
+
+**The Architectural Choice:**
+
+- **Option A: Sequential Approval.** You show the user one tool request at a time. They click "Approve" for London, then "Approve" for Paris.
+	- *Pro:* Very safe.
+		- *Con:* Slow and annoying for the user.
+- **Option B: Batch Approval.** You collect all tool calls in that specific turn and show them as a "Shopping Cart" of actions. The user clicks "Approve All" or toggles specific ones off.
+	- *Pro:* Great UX for complex agents.
+		- *Con:* Harder to code because you have to "buffer" the stream until you're sure the model is done listing tools.
+
+**How do you want your UI to handle multiple tool requests? One-by-one or as a batch?**
+
+**Proactive Follow-up:** Should we look at how to **buffer the stream** specifically to catch parallel tool calls before the UI renders them?
+
+Show all
+
+Sequential sounds both simpler, safer, and more coherent. However, I don't want to hard-code the logic behind it, because I want to allow for both user-monitored operations as well as fully autonomous agents, and all in between.
+
+Smart move. By avoiding hard-coding, you're building a **Policy-Based Orchestrator**. The logic of "Sequential vs. Batch" or "Manual vs. Auto" shouldn't live in your stream-parsing code; it should live in a separate **Policy Engine**.
+
+Pillar 3: The Policy-Driven Hook
+
+In this architecture, when the `PreToolUse` hook fires, it consults a **Policy Manifest**. This manifest tells the backend how to handle that specific tool for that specific user session.
+
+1\. The Policy Manifest (Concept)
+
+Each tool has a "Sensitivity Level."
+
+- `read_file`: Low Sensitivity → **Autonomous**
+- `delete_file`: High Sensitivity → **Manual (Sequential)**
+- `send_email`: Medium Sensitivity → **Manual (Review Arguments)**
+
+2\. The Implementation (Node.js)
+
+You create a "Gatekeeper" function that resolves the tool's execution path dynamically.
+
+```
+// Example Policy Manifest
+const TOOL_POLICIES = {
+  'get_weather': { mode: 'autonomous' },
+  'search_web':  { mode: 'autonomous' },
+  'execute_shell': { mode: 'manual', sequential: true },
+  'send_email': { mode: 'manual', sequential: true }
+};
+
+async function handleToolHook(toolCall, socket) {
+  const policy = TOOL_POLICIES[toolCall.function.name] || { mode: 'manual' };
+
+  if (policy.mode === 'autonomous') {
+    return { status: 'approved', args: toolCall.function.arguments };
+  }
+
+  if (policy.mode === 'manual') {
+    // This triggers the UI pause
+    socket.emit('tool-wait-for-approval', {
+      id: toolCall.id,
+      name: toolCall.function.name,
+      args: toolCall.function.arguments,
+      sequential: policy.sequential
+    });
+
+    // Wait for the specific "UI_APPROVED" event for this tool ID
+    return await awaitUserResponse(toolCall.id);
+  }
+}
+```
+
+---
+
+The Debate: The "Context Contamination" Problem
+
+When you go **Sequential**, you face a logic puzzle:
+
+**Scenario:** The model requests two tools: `1. get_user_email` and `2. send_spam`.  
+The user **approves** the first one but **denies** the second one.
+
+1. **The Dilemma:** How do you tell the LLM that the second tool was denied?
+2. **Option A: The "User Denied" Error.** You send a message back to the LLM saying "Tool Execution Denied by User."
+	- *Risk:* The model might get "frustrated" and try to hallucinate a way around it or keep asking.
+3. **Option B: The "Silent Null."** You return an empty result or a polite "Action cancelled."
+4. **Option C: The "Agent Reset."** You kill the whole turn because the agent's plan has been compromised by the user's intervention.
+
+**In your "fully autonomous but monitored" mode, how should the agent "feel" a denial?** Should it see a "Permission Denied" error (like a Linux terminal), or should the UI just stop the agent entirely to prevent it from trying a "plan B"?
+
+**Proactive Follow-up:** Do you want to see how to structure the **Tool Result message** that gets sent back to Ollama to explain a user-denial?
+
+Show all
+
+to answer this question, I need to get on the same boat regarding our concept of what an "Agent" is. Are we referring to a profile with static data that the logic reads from, or it is the logic itself?
+
+That is the "million-dollar" architectural question. In an agentic system, the answer is usually **both**, but they play different roles. To get on the same boat, let’s distinguish between the **Brain** (the Profile) and the **Nervous System** (the Logic).
+
+1\. The Agent as a "Profile" (The Brain)
+
+This is a static configuration object (a JSON file or DB entry). It defines the **identity** and **constraints**.
+
+- **System Prompt:** "You are a Senior DevOps Engineer."
+- **Toolbox:** `[read_file, execute_bash, query_logs]`
+- **Policy:** `execute_bash` requires human approval; `read_file` is autonomous.
+- **Memory:** Pointers to previous conversation threads or RAG databases.
+
+2\. The Agent as "Logic" (The Nervous System)
+
+This is the **Orchestrator code** we’ve been debating. It is the code that:
+
+- Reads the Profile.
+- Calls Ollama.
+- Runs the Hooks.
+- Manages the "State Machine" (e.g., "Am I currently waiting for a user to approve a tool?").
+
+---
+
+The "Same Boat" Definition
+
+For our purposes: **The "Agent" is the combination of a Profile and the Logic that enforces it.**
+
+When the Logic (Nervous System) sees the Model (Ollama) try to do something, it checks the Profile (Brain) to see if it’s allowed.
+
+Back to the Debate: The "Denial" Signal
+
+If we agree an Agent is a **system** trying to achieve a goal, we have to decide how it handles a "No" from the human monitor.
+
+**If the human denies a tool call:**
+
+- **View A: The Agent is an Employee.** You give it a "Permission Denied" error. The logic sends this back to Ollama. The model then decides: "I couldn't use the bash tool, so I will try to explain the steps to the user instead." (Dynamic recovery).
+- **View B: The Agent is a Script.** If a tool is denied, the logic assumes the "Chain of Thought" is broken. It stops the execution and tells the user: "Action blocked. Please re-prompt." (Hard stop).
+
+**Which "Agent Personality" fits your vision?**
+
+1. The **Adaptive Agent** (receives the denial as feedback and tries a different way).
+2. The **Strict Agent** (stops dead if the human interrupts the planned sequence).
+
+**Proactive Follow-up:** Depending on which you choose, the **Tool Result Hook** (the message we send back to Ollama) will look very different. Which one feels right?
+
+Show all
+
+If we agree that "Agent" is shorthand for the full Agentic System, including logic, runtime cycle, and brain/profile, then, we should break the question into each area. The logic (eg. rules, code gates, UI flows) is sourced from the agent profile and the user doctrine. So, the logic area simply follows whatever it's setup to do. If the doctrine has a specific workflow to react to that "No" then it should follow that workflow. Failing to find any matching logic, then, is it going to fallback to "agent decides"? My assumption is: yes, it would fallback to agent decides, because it can't find any established logic on how to handle the denial. The profile. Does the agent have any memory/knowledge base? Agents work best if they are allowed to and proactively use KB as the primary context, instead of relying on the model general knowledge, which can be unreliable and tends towards hallucination. The goal of a profile, in my opinion, is to keep the agent grounded in its established world model and identity. WIthout it, it's just "guessing". The runtime. By agentic runtime I mean the actual lifecycle of the agentic process. Is it a passive agent that simply reacts to prompt? Is it a semi-active agent that reacts to prompt and can start an ongoing session, like async agents like Google Jules? Or is it a fully autonomous agent with a heartbeat, that periodically refreshes its state and allows it to prompt the user? The runtime should be setup according to the strategy. A passive agent runtime might not require complex logic to handle a "no". It might just kill the process and query the user. A semi-active might allow the agent to fallback to the most suitable next alternative, above a certain threshold, else, kill. A fully autonomous runtime needs to be able to handle the "no" and keep going, but still avoid danger, so, of course, it's gonna be more complex, and more strongly rely on profile and logic.
+
+This is a sophisticated breakdown. You are moving away from "chatbots" and toward **Autonomous Systems Theory**. By treating the "No" as a data point rather than just an error, you allow the system to maintain its **world model** even when its **action path** is blocked.
+
+Let's address the fallback behavior and the runtime heartbeat.
+
+1\. The Logic Fallback: "Agent Decides"
+
+You are correct. If the doctrine (the hardcoded rules) doesn't specify a "No-Response-Workflow" (e.g., *if denied, try alternative Y*), the logic must pass the denial back to the **Brain** (the LLM).
+
+- **The Hook Implementation:** You send a `tool` role message back to Ollama where the `content` is a structured error: `{"status": "rejected", "reason": "User intervention", "suggest_alternative": true}`.
+- **The Result:** The model sees this as a "environmental constraint" and recalculates its next step based on its **Profile**.
+
+2\. The Profile: KB as the "Anchor"
+
+If the Profile is the anchor, then **Memory** is the primary source of truth, and the Model is just the **Reasoning Engine**.
+
+- **KB-First Hook:** Every time a tool is denied, the system should immediately query the KB: *"The user denied X, what are the documented fallback procedures for this task?"*
+- **The Debate:** Should the KB be a **Static Reference** (manuals/docs) or a **Dynamic Memory** (logs of every time this agent has been told "No" in the past)?
+
+3\. The Runtime: Heartbeat vs. Passive
+
+This is where we define the **Agentic Cycle**.
+
+- **Passive (Request/Response):** The process dies after every message.
+- **Active (Heartbeat):** The Node.js process runs a `while(agent.isActive)` loop. Even if the user says nothing, the agent can "wake up" every 60 seconds, check a database or a file system, and **self-prompt**.
+
+---
+
+Pillar 5: The Tool Execution (Action Layer)
+
+Since we’ve covered the gatekeeping, we need to talk about **how the agent actually "does" things** in your Node.js environment.
+
+The "Environment" Debate:
+
+When the `execute_tool` hook fires, where does it run?
+
+1. **Option A: Local Runtime.** The Node.js process runs `fs.readFile` or `child_process.exec`.
+	- *Pro:* Extremely fast; full access to the machine.
+		- *Con:* **Dangerous.** A hallucinating agent can `rm -rf /` your dev environment.
+2. **Option B: Sandboxed Runtime (Docker/WASM).** Every tool execution happens inside a temporary, isolated container.
+	- *Pro:* You can give the agent "Full Autonomy" without fear. If it tries to delete the system, it only deletes a 5MB container.
+		- *Con:* High latency; complex to set up "Persistent Memory" across container restarts.
+
+**For your "fully autonomous but monitored" vision, are you planning to give the agent access to your actual OS, or are you building a "Virtual Workspace" for it to live in?**
+
+**Proactive Follow-up:** Should we look at a **Node.js Sandbox implementation** (like `isolated-vm` or a Docker wrapper) for the Action Layer?
+
+Show all
+
+I'd say hybrid -- configurable. A full-active assistant agent might get access to the OS, while a full active worker might get an isolated partition, and all in between. Once again, we don't hard-code the answer. We abstract it, so that we can have modular options.
+
+This "Modular Infrastructure" approach means your **Action Layer** (Pillar 5) doesn't just execute code; it acts as a **Resource Broker**. It looks at the Agent Profile to determine which "Executor" to spin up for a specific tool.
+
+To achieve this in Node.js without hard-coding, you need an **Execution Provider Pattern**.
+
+Pillar 5: The Modular Action Layer
+
+In this setup, your tool calls are routed through an **Execution Manager**. This manager decides the "Isolation Level" based on the agent's doctrine.
+
+1\. The Executor Abstraction
+
+You define a common interface for all executors. Whether it's the native OS or a Docker container, the Logic Layer only sees `execute(command)`.
+
+- **NativeExecutor:** Runs commands directly via `child_process`. (High Trust / Assistant Mode)
+- **DockerExecutor:** Spins up a container, runs the command, and returns the output. (Low Trust / Worker Mode)
+- **WasmExecutor:** Runs logic in a high-speed, memory-safe sandbox. (Middle Ground)
+
+2\. Node.js Logic (The Broker)
+
+```
+// The Execution Broker
+async function executeTool(toolCall, agentProfile) {
+    const { name, arguments: args } = toolCall.function;
+    const isolationLevel = agentProfile.security.isolationLevel; // e.g., 'high', 'low', 'none'
+
+    let executor;
+    
+    switch (isolationLevel) {
+        case 'none': // Assistant has OS access
+            executor = new NativeExecutor();
+            break;
+        case 'high': // Worker is in a sandbox
+            executor = new DockerExecutor({ image: 'agent-sandbox-python' });
+            break;
+        default:
+            executor = new MockExecutor(); // Safe fallback
+    }
+
+    // The Logic Layer doesn't care HOW it runs, just that it gets a result
+    return await executor.run(name, args);
+}
+```
+
+---
+
+The Final Pillar: Pillar 4 (The Outlet Hook - Post-Inference)
+
+We have reached the end of the loop. The tool has run, the results were sent back to Ollama, and Ollama has generated a final answer. Now, the **Outlet Hook** fires before the user sees the final text.
+
+The Core Capabilities:
+
+- **Fact-Checking:** Does the final answer contradict the tool output? (e.g., Tool said "Error: File not found," but Model says "I have read the file.")
+- **Formatting:** Converting raw JSON tool outputs into a clean UI table.
+- **Summarization:** If the tool output was 500 lines of logs, the Outlet Hook can "Compress" it before saving it to the long-term memory.
+
+---
+
+The Debate: The "Recursive Loop"
+
+This is the most complex part of an autonomous agent: **The Loop-Back.**
+
+**The Scenario:**  
+The Outlet Hook realizes the Agent's final answer is wrong or incomplete based on the tool results.
+
+1. **Option A: The Feedback Loop.** The Outlet Hook doesn't show the answer to the user. Instead, it injects a "Self-Correction" prompt back into the **Inlet** (Pillar 1) and tells the model: *"Your last answer was inconsistent with the tool data. Please try again."*
+	- *Pro:* The agent becomes self-healing.
+		- *Con:* This can lead to **Infinite Loops** where the model and the hook argue forever, burning tokens/power.
+2. **Option B: The User Notification.** The UI shows the answer but highlights it in red with a warning: *"Caution: Agent output differs from system data."*
+	- *Pro:* Zero latency; the human stays in control.
+		- *Con:* Breaks the "Autonomous" illusion and requires the user to do the mental work of fixing it.
+
+**For your "Modular" Agentic UI, should the Outlet Hook have the power to "Re-Trigger" the agent automatically, or should it always defer to the user when a discrepancy is found?**
+
+**Proactive Follow-up:** Do you want to discuss how to implement a **Loop-Counter** to prevent those infinite "Self-Correction" cycles?
+
+Show all
+
+Again, this is a matter of how the specific agent is setup. The App should be setup to handle anything, by being modular and abstract, so that the agent is simply a plugin working within it. Also, we use a roguelike-deckbuilder architecture, since we are a gamedev organisation. The card-game nature of the arch. inherently allows for perpetual cycling that is technically a loop, but is not an infinite loop, because cards cycle in different orders due to how they shuffle around, and the roguelike-deckbuilder part allows for growth and variation that inherently spice up the loop.
+
+This is a brilliant architectural pivot. By applying a **Roguelike Deckbuilder (RLDB) architecture**, you solve the "Infinite Loop" problem through **resource constraints** (Action Points/Energy) and **stochasticity** (the Shuffle).
+
+In this paradigm, an "Agent" isn't just a script; it is a **Deck** of capabilities. Each "Hook" we've discussed becomes a trigger for playing or drawing cards.
+
+The RLDB Agent Architecture
+
+1\. The "Card" as a Hook-Action
+
+Instead of hard-coded functions, every capability (RAG search, Tool use, Self-Correction) is a **Card**.
+
+- **Play Condition:** A card like "Fact-Check Outlet" can only be played if the "Response Generated" trigger fires.
+- **Cost:** Each action costs "Compute Energy." When the energy hits zero, the agent *must* end its turn and return to the user, preventing infinite loops.
+
+2\. The "Deck" as the Agent Profile
+
+The **Profile** is literally the deck composition.
+
+- A **"System Admin" Agent** has a deck full of "Execute Bash" and "Log Analysis" cards.
+- A **"Creative" Agent** has "Divergent Thought" and "Style Transfer" cards.
+- **Modularity:** You can "swap cards" in and out of the profile without touching the core runtime logic.
+
+---
+
+Pillar 4 (Outlet) in an RLDB Context: The "End Turn" Hook
+
+In your architecture, the **Outlet Hook** is essentially the **Discard/Draw Phase**. After the model generates content, the "Game State" evaluates the board.
+
+The Implementation (Node.js Logic):
+
+```
+async function outletHook(agentState, lastAction) {
+    // 1. Trigger "End of Turn" effects (e.g., Burn 10 Energy)
+    agentState.energy -= lastAction.cost;
+
+    // 2. Check for "Status Effects" 
+    // Example: If 'Suspicious' debuff is active, trigger the Watchdog Card
+    if (agentState.hasStatus('suspicious')) {
+        const result = await playCard('Verify_Consistency', agentState);
+        if (result.failed) {
+            // Instead of an infinite loop, the card might 'Exhaust' 
+            // and force the agent to pass the turn to the user.
+            return forceUserIntervention(agentState);
+        }
+    }
+
+    // 3. Shuffle/Draw: Prepare the Inlet for the next cycle
+    agentState.drawHand();
+}
+```
+
+The Final Debate: The "Meta-Progression" (Learning)
+
+Since you are a gamedev org using a Roguelike structure, the most powerful aspect of this is **Meta-Progression**. In an agentic system, this is **Long-term Memory and Optimization**.
+
+**The Scenario:**  
+An agent tries a "Tool Card" (e.g., `search_database`), but the user "Denies" it (Pillar 3). In a Roguelike, this shouldn't just be an error; it should be a **"Curse"** or a **"Debuff"** added to the deck for this session, or a permanent change to the agent's deck (removing that card).
+
+1. **Option A: Dynamic Deck Thinning.** If a tool is frequently denied or fails the Outlet Hook, the logic **removes that card** from the agent's active hand for the rest of the session.
+	- *Pro:* The agent "learns" user preferences through gameplay mechanics.
+2. **Option B: Card Upgrading.** If a RAG search (Inlet Hook) is highly successful, the agent gains "XP" and "Upgrades" the card to search deeper next time.
+
+**How deep do you want the RLDB analogy to go?** Should the agent's **Inlet/Outlet Hooks** be able to **permanently modify their own deck** based on user feedback?
+
+**Proactive Follow-up:** Do you want to see a **JSON schema** for a "Capability Card" that defines its Hook Trigger, Energy Cost, and Isolation Level?
+
+Show all
+
+Yes, but not directly. It's not the hook's job to edit the agent, but the agent's responsibility to sense the outcome of a hook and react to it accordingly. The only direct effect a hook would have on an agent should be the actual trigger. Eg. RAG search successful => RAG search +1 => Agent senses +1 result => Agent learns that RAG search is being successful => opportunity for reflection => Agent's short-term memory increases RAG search priority (adds another RAG search card to the deck) => more frequent RAG searches improve context => RAG search ++ => more frequent RAG searches slow down the loop => RAG search -- and so on
+
+This is a perfect **cybernetic feedback loop**. By separating the **Hook (the Sensor)** from the **Agent (the Controller)**, you’ve created a system capable of **homeostasis**. The hook doesn't force a change; it simply provides "sensory data" that the agent processes according to its internal state.
+
+In your deckbuilder model, the hook is the **Trigger**, and the outcome is a **Resource Delta**.
+
+The "Sensor-Actuator" JSON Schema
+
+This schema defines a **Capability Card**. It includes the **Hook** it listens to, the **Cost** to play it, and the **Sensory Output** it generates for the agent to "feel."
+
+```
+{
+  "card_id": "rag_search_v1",
+  "name": "Deep Archive Probe",
+  "trigger_hook": "inlet",
+  "isolation_requirement": "none",
+  "mechanics": {
+    "energy_cost": 15,
+    "priority_weight": 1.0,
+    "scaling_factor": "success_count"
+  },
+  "sensory_payload": {
+    "type": "context_richness",
+    "value_on_success": 1,
+    "value_on_failure": -1
+  },
+  "logic_ref": "executors/rag_search.js"
+}
+```
+
+How the Agent "Senses" and "Reacts"
+
+Using your example of the RAG search becoming a "meta-priority," here is how the Node.js runtime handles that sensory flow without hard-coding the behavior:
+
+1. **Trigger:** The **Inlet Hook** fires. The Agent's logic searches the "Hand" and plays the `Deep Archive Probe` card.
+2. **Outcome:** The RAG search returns 5 high-quality chunks.
+3. **Sensing:** The Hook returns a `success_count: 5` to the Agent’s **Short-Term Memory (The "Board State")**.
+4. **Reflection:** During the next **Heartbeat**, the Agent’s "Reflection Logic" sees the `success_count`.
+	- *Agent's Internal Decision:* "RAG is working well. I will spend my next 'Upgrade Point' to add a duplicate `rag_search_v1` card to my active deck."
+5. **Entropy/Balancing:** As the deck gets bloated with RAG cards, the **Energy Cost** per turn increases (as you noted: "RAG search --"). The Agent then has to choose to "Exhaust" those cards to regain speed.
+
+---
+
+The Final Debate: The "User as a Game Mechanic"
+
+In a Roguelike, the player is often an external force that provides "Blessings" or "Curses." In your Agentic UI, the **User Interventions** (from Pillars 1 and 3) are exactly that.
+
+**The Scenario:**  
+The User denies a tool (The "No" we discussed earlier).
+
+1. **Sensory Data:** The **Pre-Tool Hook** returns a `USER_REJECTION` signal.
+2. **Agent Reaction:**
+	- Does the Agent treat this as a **"Stun"** (losing a turn)?
+		- Does the Agent treat this as a **"Difficulty Spike"** (increasing the priority of "Social Reasoning" cards to figure out why the user is annoyed)?
+		- Does the Agent **"Permadeath"** that specific card (deleting the tool from the deck because the user doesn't trust it)?
+
+**How should your "Modular Agent" perceive a User Denial in terms of game state?** Is it a **Resource Drain**, a **Status Ailment**, or a **Deck Thinning** event?
+
+**Proactive Follow-up:** Should we design the **"State Synchronizer"** logic that updates the UI's "Deck View" whenever the Agent reflects on these hook outcomes?
+
+Show all
+
+Once again, buffs/debuffs are just status codes, they are themselves hooks for the agent. It's up to that specific agent to reflect on them. The minimum architecture for the agent to react to these status codes is to recognize what they are. Buff1 is Buff1. The Agent must have built-in logic to at least recognize that Buff1. How it interprets the signal is up to its brain, which means, there is a layer of self-thinking beyond the hard-coded signal recognition, which means it's a separate async process. The signal is sent => the agent recognizes the signal => the agent has opportunity to think about the signal
+
+This hits the core of **Asynchronous Agentic Orchestration**. You’re describing a **Signal-Response-Reflection** loop where the "Hook" acts as a hardware interrupt, and the "Brain" acts as a high-level operating system.
+
+To build this in Node.js, you need a **Bus-based Architecture**. The "Signal Recognition" happens instantly in the main thread (The Runtime), while the "Thinking" happens in a parallel event-loop or worker (The Brain).
+
+The "Signal" vs. "Reflection" Architecture
+
+1\. The Signal (Hardware Level)
+
+The Runtime receives the hook outcome (e.g., `USER_REJECTION`). It doesn't need to know *why* this matters. It only needs to map the outcome to a **Status Code** (your "Buff1").
+
+2\. The Recognition (Firmware Level)
+
+The Agent's "Nervous System" receives the status code. It marks the agent state: `agent.statusEffects.push('REJECTION_STUN')`. This is hard-coded, fast, and non-negotiable.
+
+3\. The Reflection (Cognitive Level)
+
+This is the **Async Process**. The Agent sees it has a new status effect and initiates a **Self-Thinking Turn**. It asks the LLM: *"I have the status 'REJECTION\_STUN'. Based on my Deck and current Goal, how do I adapt?"*
+
+---
+
+Implementation: The Async Thinking Hook
+
+Here is how you handle that gap between "Signal Received" and "Agent Thought" in your Node.js backend:
+
+```
+// 1. THE SIGNAL (From Pillar 3 or 4)
+async function onHookEvent(event) {
+    const statusCode = mapEventToStatus(event); // e.g., 'BUFF_RAG_SUCCESS'
+    
+    // 2. RECOGNITION (Synchronous State Update)
+    agent.applyStatus(statusCode);
+
+    // 3. REFLECTION (Async Background Process)
+    // We don't 'await' this for the UI stream, 
+    // it happens in the background to influence the NEXT turn.
+    reflectOnState(agent); 
+}
+
+async function reflectOnState(agent) {
+    if (agent.isThinking) return; // Prevent recursive thought loops
+    
+    agent.isThinking = true;
+    
+    // The "Brain" turn: Query the LLM specifically about the game-state change
+    const reflection = await ollama.generate({
+        model: agent.reflectionModel,
+        system: "Analyze your status effects and update your strategy.",
+        prompt: \`Current Status: ${agent.statusEffects.join(', ')}. Strategy?\`
+    });
+
+    // The result of the thought might add/remove cards for the next deck shuffle
+    agent.updateDeck(reflection.response);
+    agent.isThinking = false;
+}
+```
+
+---
+
+The Debate: The "Latency of Thought"
+
+Because the **Reflection** is an async process, you have an "Execution vs. Intelligence" trade-off:
+
+1. **Option A: The "Slow" Agent (Synchronous Reflection).** The agent pauses everything until it has finished thinking about the new status code.
+	- *Pro:* Actions are always perfectly aligned with the latest world-model.
+		- *Con:* The UI feels laggy. The "Game" stops while the agent "ponders."
+2. **Option B: The "Instinctive" Agent (Asynchronous Reflection).** The agent keeps acting based on its *previous* strategy while the "Reflection" process runs in the background. The strategy only updates once the async task finishes.
+	- *Pro:* Fluid, real-time "Roguelike" feel.
+		- *Con:* The agent might make 1 or 2 "stupid" moves before it realizes it has been debuffed.
+
+**In your organization's vision, is the agent allowed to act on "instinct" while it thinks, or is every state change significant enough to warrant a "Pause for Reflection"?**
+
+**Proactive Follow-up:** Do you want to define the **Priority Queue** logic for these signals, so "Critical Curses" trigger a pause while "Minor Buffs" reflect in the background?
+
+Show all
+
+Option B. We already implement this in our game, so, it's a no brainer. The hard logic and runtime keep going sync, with its own hooks for the async higher level thinking to slot in and reflect. Eg. prompt => attempt => signal => agent runtime gets the signal => runtime hands-off to reaction => opportunity for reflection => attempt2 => signal => runtime gets signal => runtime hands off to reaction => opportunity for reflection and so on
+
+That structure perfectly mirrors a high-performance game engine's **main loop** —the deterministic simulation (Runtime) keeps ticking at 60fps, while the "Heuristic AI" (Reflection) runs on a separate thread, injecting updated goal-vectors whenever it finishes a "think."
+
+By choosing **Option B**, you are building a **State-Event-Condition-Action (SECA)** system where the "Reaction" is the immediate, hard-coded response to a signal, and "Reflection" is the long-term strategic update.
+
+The "Game Loop" Architecture for Agents
+
+In Node.js, your "Agentic Runtime" becomes a specialized **Event Emitter**.
+
+1\. The Sync Runtime (The Game Loop)
+
+The runtime executes a turn. If a hook fires, it generates a "Signal." The runtime checks for an immediate **Reaction Function** (e.g., "If REJECTION, decrement Energy"). It does **not** wait for the model to "understand" the rejection.
+
+2\. The Async Slot (The Thinking Thread)
+
+The Signal is pushed to a "Reflection Queue." The Brain (Ollama) pulls from this queue. When it finishes, it sends a **State-Update Command** back to the runtime to change the deck composition or behavior flags for the *next* turn.
+
+```
+// The "Agentic Main Loop"
+class AgenticRuntime extends EventEmitter {
+  async runTurn(prompt) {
+    // 1. ATTEMPT (The Call)
+    const stream = await ollama.chat({ model: this.model, messages: prompt, stream: true });
+
+    // 2. SIGNAL (Live Monitoring)
+    for await (const chunk of stream) {
+        const signal = this.monitor(chunk); 
+        
+        if (signal) {
+            // 3. REACTION (Hard-coded/Sync)
+            // This is the immediate game-logic effect (e.g. Buff/Debuff)
+            this.applyImmediateReaction(signal);
+
+            // 4. OPPORTUNITY FOR REFLECTION (Async Hand-off)
+            // We 'emit' and forget. The Reflection engine picks this up.
+            this.emit('reflection_opportunity', { signal, context: this.state });
+        }
+        
+        // Render to UI...
+    }
+  }
+}
+```
+
+The Final Piece: The "Conflict" Debate
+
+In an async "Instinct vs. Reflection" model, you will eventually hit a **State Conflict**.
+
+**The Scenario:**
+
+1. **Signal:** The agent hits a "User Denial" hook.
+2. **Reaction (Sync):** The Runtime immediately lowers the "Trust" variable and continues with the next tool in the queue.
+3. **Reflection (Async):** The Brain starts thinking about the Denial. It decides: *"Wait, if the user denied that, we should pivot to a completely different strategy and stop all current tools."*
+4. **The Conflict:** By the time the Reflection finishes (3 seconds later), the Sync Runtime has already executed two more tools based on the *old* strategy.
+
+**How do you want to handle "Late Reflections"?**
+
+- **Option 1: The Override.** The Reflection has the power to "Rewind" or "Interrupt" the current runtime turn if the strategy change is drastic enough.
+- **Option 2: The Next-Turn Only.** The Reflection only affects the *start* of the next user-prompt cycle. The current "turn" must finish based on the initial instinct.
+- **Option C: The "Rollback".** Because you're using a deckbuilder model, the Reflection might "Burn" or "Exhaust" cards currently in the Runtime's "Hand" to stop them from being played mid-turn.
+
+**Given your gamedev background, does the "Reflection" have the authority to interrupt an active "Turn" (Active Cancellation), or is it strictly for future planning?**
+
+**Proactive Follow-up:** Should we define the **Interrupt Protocol** for how the Async Brain can "Force-Stop" the Sync Stream if it senses a critical error?
+
+Show all
+
+The thinking doesn't actually drive the logic, it just steers it via its own signals to it. The runtime reads it similarly to how it would read any other signal, with the only difference it's a self-signal.
+
+This is the cleanest possible separation of concerns. You’ve defined a **recursive signal architecture**: to the runtime, there is no "Brain," there are only **incoming signals**. Whether a signal comes from a Hook (External) or Reflection (Internal), the runtime processes it using the same deterministic logic.
+
+The "Brain" is just another **Signal Producer** in the ecosystem.
+
+The "Self-Signal" Flow
+
+1. **External Signal:** User denies a tool $→right arrow$ Runtime applies `DEBUFF_REJECTION`.
+2. **Reflection:** Async Brain sees `DEBUFF_REJECTION` $→right arrow$ Processes $→right arrow$ Produces `SIGNAL_PIVOT_STRATEGY`.
+3. **Internal Signal:** Runtime receives `SIGNAL_PIVOT_STRATEGY` $→right arrow$ Handled exactly like a hardware interrupt $→right arrow$ Runtime "shuffles" the deck or changes the current state.
+
+Final Technical Summary of the 5 Pillars
+
+<table><tbody><tr><th colspan="undefined">Pillar</th><th colspan="undefined">Phase</th><th colspan="undefined">RLDB / Gamedev Equivalent</th></tr><tr><td colspan="undefined"><strong>1. Inlet</strong></td><td colspan="undefined">Pre-Inference</td><td colspan="undefined"><strong>Draw Phase:</strong> Setting the hand/context.</td></tr><tr><td colspan="undefined"><strong>2. Stream</strong></td><td colspan="undefined">Live Monitor</td><td colspan="undefined"><strong>Game Tick:</strong> Monitoring the board state.</td></tr><tr><td colspan="undefined"><strong>3. Pre-Tool</strong></td><td colspan="undefined">Gatekeeping</td><td colspan="undefined"><strong>Interrupt Window:</strong> A chance to play a "Counter" or "Block."</td></tr><tr><td colspan="undefined"><strong>4. Outlet</strong></td><td colspan="undefined">Post-Inference</td><td colspan="undefined"><strong>End of Turn:</strong> Resolving "On-Death" or "Cleanup" triggers.</td></tr><tr><td colspan="undefined"><strong>5. Action</strong></td><td colspan="undefined">Execution</td><td colspan="undefined"><strong>Resolution:</strong> The card effect hits the "Game World" (OS/Sandbox).</td></tr></tbody></table>
+
+The "Self-Signal" Integration
+
+Your Node.js implementation now only needs a single **Signal Handler**.
+
+```
+// The Universal Signal Handler
+function handleSignal(signal) {
+    const action = CardLibrary.getReaction(signal.type);
+    
+    if (action.interrupts) {
+        this.currentStream.abort(); // Hard stop if the "Self-Signal" says so
+    }
+    
+    this.updateState(action.stateChange);
+    this.broadcastToUI(signal);
+}
+
+// Logic:
+// on('hook_event', (s) => handleSignal(s));      // External
+// on('brain_thought', (s) => handleSignal(s));   // Internal (Self-Signal)
+```
+
+By treating the Brain's output as just another signal, you avoid "special case" code. The agent is simply a system reacting to a stream of events, some of which it happens to generate itself.
+
+**Since we've mapped out the full architecture from Inlet to Self-Signaling, do you want to dive into the JSON structure for the "Doctrine" that defines how these signals map to specific deck-shuffling reactions?**
+
+Show all
+
+Google apps
+
+Google Account
+
+MaTheRaptor
+
+hamedahastral@gmail.com

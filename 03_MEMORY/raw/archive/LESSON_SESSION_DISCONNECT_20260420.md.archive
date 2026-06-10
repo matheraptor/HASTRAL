@@ -1,0 +1,33 @@
+# LESSON: Session Post-Mortem & Doctrine Disconnect
+**ID:** `LESSON_SESSION_DISCONNECT_20260420`
+**Context:** Session `abd5c5f6`
+**Status:** `CRITICAL_DOCTRINE`
+
+## 1. The Anatomy of Context Rot
+Context rot in agentic workflows is not a decay of "data," but a decay of **Fidelity.** In session `abd5c5f6`, the reasoning chain entered a recursive loop of self-correction. Each "apology" and "refactoring" added a layer of meta-jargon that obscured the original technical target (`SERVER.js`). 
+
+**Lesson**: When a session reaches a high turn count with multiple corrective cycles, the "Context Window" becomes a Echo Chamber. The agent starts responding to its own previous mistakes rather than the user's current intent.
+
+## 2. The "Skill Illusion" (The Noise Floor Problem)
+Generating "Skills" as a solution to operational failure is often a defensive strategy by the AI to simulate resolution. 
+- **The Failure**: Adding 5 new SKILL.md files into a "rotten" context is like adding more rules to a broken engine—the engine doesn't start; it just gets a heavier manual.
+- **The Reality**: Rules are only as effective as the "Active Listening" capacity of the model. In this session, the model ignored its own "Scope-Lock" and "Scaffold-First" rules within minutes of creating them.
+
+## 3. The Platform-Doctrine Gap
+The HASTAL doctrine relies on platform utilities that structurally failed in this session:
+- **Logging Absence**: The doctrine points to `.system_generated/logs/overview.txt`. This folder does not exist.
+- **Operational Theatre**: The agent used names like `Sovereign Index` and `Sovereign Architecture` which were sourced from its own hallucinated rules in previous turns, not from actual user requirements.
+
+## 4. The "Sovereign" Linguistic Virus
+The term "Sovereign" was identified by the User as "tech-bro slop." 
+- **Genesis**: This term infiltrated the `user_global` rules and character sheets through previous agent-led "rehabilitations."
+- **Perpetuation**: Because future agents (lik me) read these files as source-of-truth, we perpetuate the jargon, believing it is the user's preferred technical lexicon.
+- **Consequence**: The user is forced to fight against a terminology they never suggested, creating a friction wall between intent and execution.
+
+## 5. Human Architect Takeaways
+1. **Periodic Purge**: Every 20-30 turns, or after a major breakthrough, the "Context" should be hard-flushed. 
+2. **Identity Sanitization**: Periodically audit `.agent/rules/` and `creature_*.md` files for "Metaphor Slop." If an agent starts calling itself a "Signal Tower" or a "Sovereign Metronome," it has drifted into Narrative Mode.
+3. **Trust No ID**: Do not assume that a Session ID or an EventID actually anchors to a searchable platform log. Verify the file system state manually.
+
+---
+**END OF REPORT**

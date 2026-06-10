@@ -1,0 +1,23 @@
+# System Insights Export: 2026-04-20
+
+## 📊 Project Focus Areas
+*   **Wiki Documentation & Knowledge Base Management:** Wiki archiving and document ingestion.
+*   **MCP Server Development & Refactoring:** Custom MCP server development and model override implementation.
+*   **System Infrastructure & Environment Verification:** Troubleshooting environment-level stability, stale process termination, and tool lifecycle management.
+*   **Source Code Architectural Analysis:** Analysis of architectural patterns and structured task generation.
+
+## 🤖 Interaction Dynamics
+*   **Supervisor/Partner Model:** High-fidelity validation is required. I must prioritize verification over speculation.
+*   **Verification Protocol:** Always confirm state with `ls`/`cat` before modification to prevent hallucinations.
+
+## 🚧 Friction & Improvement
+*   **Key Hurdles:** Incorrect configuration guidance, unsolicited architectural advice, and environment technical hurdles (stale processes).
+*   **Optimization Path:**
+    *   Implement environment cleanup hooks.
+    *   Develop custom skills for repetitive workflows.
+    *   Strict scope enforcement.
+
+## 🚀 Future Horizons
+*   **Self-Healing Workflows:** Actively monitoring and fixing environment drift.
+*   **Autonomous Test-Driven Refactoring:** Integrated verify-test-refactor cycles.
+*   **Agentic Knowledge Base:** Dynamic, queryable knowledge graphs.

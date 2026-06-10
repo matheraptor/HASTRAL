@@ -1,0 +1,20 @@
+{
+  "name": "hastral-cli",
+  "version": "0.1.0",
+  "description": "M.A.G.P.I.E. Interface for HASTRAL",
+  "main": "index.js",
+  "bin": {
+    "hastral-cli": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js start"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.0.0",
+    "inquirer": "^9.2.15",
+    "ora": "^7.0.1",
+    "socket.io-client": "^4.7.5"
+  },
+  "type": "module"
+}

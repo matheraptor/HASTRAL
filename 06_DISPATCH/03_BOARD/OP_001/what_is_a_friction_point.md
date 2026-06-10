@@ -1,0 +1,1 @@
+A friction point happens when we don't have 100% confirmed knowledge of a concept that we want to implement, or when there is a conflict with our intended implementation and the current reality of how to implement it, or we haven't resolved a debate, or we are lacking a clear identifiable TASK or MISSION to translate that point into action.
