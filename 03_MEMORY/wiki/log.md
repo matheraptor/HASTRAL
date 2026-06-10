@@ -60,3 +60,9 @@
     - Created [[topics/operations/troubleshooting/sqlite-fts5-corruption]]
     - Updated [[index.md]]
 
+
+- **2026-06-10**: Completed Batch 3 - HR/Personnel ingestion (Google Jules):
+    - Created [[HR_Policies_Framework]]
+    - Created [[Organizational_Structure]]
+    - Created [[Team_Onboarding_Guide]]
+    - Updated [[index.md]]

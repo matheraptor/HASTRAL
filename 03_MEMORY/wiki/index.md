@@ -1,8 +1,9 @@
 ---
 keyID: 1713280000000
 type: index
-version: 0.2.0
+version: 0.2.1
 status: stable
+last_modified: 2026-06-10
 tags: [index, home]
 origin: []
 legacy: []
@@ -14,6 +15,15 @@ taxonomy: root
 # HASTRAL Wiki (High-Fidelity Agentic Strategic Tactical Retrieval & Analysis Logic)
 
 **Summary**: A Karpathy-style Markdown wiki designed as a primary knowledge retrieval layer for AI agents, featuring a logical taxomix tree and deterministic semantic bridging.
+
+## 📊 Ingestion Progress
+
+| Batch | Source Category | Status | Pages | Last Updated |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | News & Announcements | ✅ Complete | 3 | 2026-05-18 |
+| 2 | Archive & Chronicle | ✅ Complete | 3 | 2026-05-23 |
+| 3 | HR & Personnel | ✅ Complete | 3 | 2026-06-10 |
+| **Total** | | | **9** | **2026-06-10** |
 
 ---
 
@@ -73,6 +83,11 @@ _Articles_: Technical, [[topics/research/technical/nanotech_realities|Nanotech]]
 
 **Purpose**: AI-based vocal profiling and singing conversion pipelines.
 _Articles_: [[topics/codecraft/audio/virtual-singers/local-svc-frameworks|SVC Frameworks]], [[topics/codecraft/audio/virtual-singers/dataset-creation|Dataset Creation]], [[topics/codecraft/audio/virtual-singers/integration-automation|Integration & Automation]].
+
+### Batch 3 - HR/Personnel
+
+**Purpose**: Policies, organizational structure, and team onboarding guides.
+_Articles_: [[HR_Policies_Framework|HR Policies Framework]], [[Organizational_Structure|Organizational Structure]], [[Team_Onboarding_Guide|Team Onboarding Guide]].
 
 _Articles_: [[topics/codecraft/physics/4-00-physics-povart|Physics]], [[topics/codecraft/architecture/index|Architecture]], [[topics/codecraft/worldbuilding/index|Worldbuilding]].
 
