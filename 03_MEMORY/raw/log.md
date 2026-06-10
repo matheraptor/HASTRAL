@@ -233,3 +233,9 @@ Ingestion Session (12:00 PM)
 - Processing: `git-pull-requests.md`
 - Status: Completed
 - Destination: `wiki/git/pull-requests.md`
+
+## Ingestion Session (2026-06-10)
+
+- Processing: Batch 3 HR/Personnel chunks (9-03_HR.part*.md)
+- Status: Completed
+- Destination: wiki/HR_Policies_Framework.md, wiki/Organizational_Structure.md, wiki/Team_Onboarding_Guide.md
