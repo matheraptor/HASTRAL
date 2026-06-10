@@ -10,6 +10,7 @@ ssh-key.*
 .gemini
 .planning
 .remember
+CLAUDE.md
 
 # Google Drive temporary/sync files
 .tmp
