@@ -51,8 +51,13 @@ _Articles_: [[session_friction_audit|Session Friction Audit]], [[session_post_mo
 
 ### [[topics/operations/infrastructure/index|Infrastructure]]
 
-**Purpose**: System insights, environment stability, and optimization path.
-_Articles_: [[system_insights_2026_04_20|System Insights 2026-04-20]], [[hastral/pmc/ops/maritime-logistics-may-2026|Maritime Logistics May 2026]].
+**Purpose**: System insights, environment stability, supply chain logistics, and maritime operations.
+_Articles_: [[system_insights_2026_04_20|System Insights 2026-04-20]], [[topics/operations/infrastructure/maritime-logistics-2026|Maritime Logistics 2026]], [[topics/operations/infrastructure/strait-of-hormuz-closure|Strait of Hormuz Closure]], [[topics/operations/infrastructure/project-adele-surveillance-net|Project ADELE Surveillance Net]], [[topics/operations/maritime/task-force-raptor|Task Force Raptor]].
+
+### [[topics/operations/humanitarian/index|Humanitarian & Crisis Response]]
+
+**Purpose**: Emergency response, relief operations, and global crisis coordination.
+_Articles_: [[topics/operations/humanitarian/global-crisis-2026|Global Crisis 2026 (Triple Emergency)]], [[topics/operations/humanitarian/sudan-famine-2026|Sudan Famine Crisis]].
 
 ### [[topics/philosophy/index|3. Philosophy]]
 
@@ -61,8 +66,8 @@ _Articles_: Metaphysics, [[topics/philosophy/cognition/index|Cognition]].
 
 ### [[topics/research/index|4. Research]]
 
-**Purpose**: Experimental findings and technical platform guides.
-_Articles_: Technical, [[topics/research/technical/nanotech_realities|Nanotech]], [[magic_turing_complete|MTG Turing Completeness]], [[topics/research/openclaw/index|OpenClaw]], [[topics/research/technical/vlc_slow_boot_fix|VLC Slow Boot Fix]].
+**Purpose**: Experimental findings, technical platform guides, geopolitical analysis, and domain research.
+_Articles_: Technical, [[topics/research/technical/nanotech_realities|Nanotech]], [[magic_turing_complete|MTG Turing Completeness]], [[topics/research/openclaw/index|OpenClaw]], [[topics/research/technical/vlc_slow_boot_fix|VLC Slow Boot Fix]], [[topics/research/geopolitics/maritime-choke-points|Maritime Choke Points]], [[topics/research/geopolitics/board-of-peace-governance|Board of Peace Governance]].
 
 ### [[topics/codecraft/audio/virtual-singers/index|Virtual Singers]]
 

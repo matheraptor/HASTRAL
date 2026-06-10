@@ -10,4 +10,5 @@ tags: [index, academy, notion, schemas]
 [TOC]
 
 ## 1. Global History
+
 - [[Notion_schema_Global_History.md]]

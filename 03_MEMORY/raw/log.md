@@ -12,6 +12,22 @@ tags: [log, index]
 - Status: Completed
 - Destination: `wiki/topics/operations/troubleshooting/sqlite-corruption-recovery.md`, `wiki/database/sqlite-type-affinity.md`
 
+## Ingestion Session (2026-06-10 B)
+
+- Processing: `2-20260518_news.part1.md` through `part5.md`
+- Processing: `4-.hastral-archive.part1.md` through `part2.md`
+- Processing: `9-03_HR.part1.md` through `part3.md`
+- Status: In-Progress (Batch 1 & 2 Complete: Maritime/News + Archive)
+- Destination: 
+  - `wiki/topics/operations/infrastructure/maritime-logistics-2026.md`
+  - `wiki/topics/research/geopolitics/maritime-choke-points.md`
+  - `wiki/topics/operations/humanitarian/global-crisis-2026.md`
+  - `wiki/topics/operations/infrastructure/project-adele-surveillance-net.md`
+  - `wiki/topics/operations/maritime/task-force-raptor.md`
+  - `wiki/topics/research/geopolitics/board-of-peace-governance.md`
+  - Updated: `wiki/index.md`
+
+
 ## Ingestion Session (2026-06-09)
 
 - Processing: `Server_secutiry_and_exploits.md`
