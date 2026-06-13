@@ -1,4 +1,6 @@
-Full RP Chat Log (Debug Output) This log begins with your initial prompt and includes all agent thinking blocks and policy rectifications for a complete knowledge base submission.
+# Full RP Chat Log (Debug Output)
+
+This log begins with your initial prompt and includes all agent thinking blocks and policy rectifications for a complete knowledge base submission.
 Turn 1: User Initiates Scene
 User Input: Here's the first scene... (INT. MUSEUM - DINOSAUR HALL - DAY) ... Tim takes a moment to appreciate Elvin's fascination with the Deinonychus skeleton. He feels a new bond with him.
 Turn 2: Agent Response (Elvin/Marika Control Violation)

@@ -6,18 +6,30 @@ tags: [log, index]
 
 # Wiki Ingestion Log
 
-## Ingestion Session (2026-06-10 C)
+## Ingestion Session (2026-06-12)
 
 - Processing: `1-.hastral-ops-0249.md`
 - Processing: `10-.hastral-assets.md`
 - Processing: `11-.hastral-roster.md`
 - Processing: `12-08_log_Aomori_trip00.md`
+- Processing: `2-20260518_news.md`
 - Processing: `3-07_Intel.md`
+- Processing: `4-.hastral-archive.md`
 - Processing: `5-.hastral-raptor.md`
 - Processing: `6-09_lore_TricksterSwitch.md`
 - Processing: `7-00_doctrine.md`
 - Processing: `8-01_SOP.md`
 - Processing: `9-03_HR.md`
+- Processing: `CONCLUSION.md`
+- Processing: `CSS_and_auth.md`
+- Processing: `DEBUG_SUMMARY.md`
+- Processing: `DIEGO_COUPLING_DIAGNOSTIC_REPORT.md`
+- Processing: `DIEGO_COUPLING_FINAL_REPORT.md`
+- Processing: `DIEGO_COUPLING_FIX_GUIDE.md`
+- Processing: `DIEGO_COUPLING_ROOT_CAUSE_FIXED.md`
+- Processing: `QUICK_REF.md`
+- Processing: `QUICK_REFERENCE_Diego_Coupling.md`
+- Processing: `tasklet_setup.md`
 - Status: In-Progress
 - Destination: TBD
 

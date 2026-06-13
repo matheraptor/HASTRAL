@@ -23,18 +23,39 @@ taxonomy: root
 | 1 | News & Announcements | ✅ Complete | 3 | 2026-05-18 |
 | 2 | Archive & Chronicle | ✅ Complete | 3 | 2026-05-23 |
 | 3 | HR & Personnel | ✅ Complete | 3 | 2026-06-10 |
-| **Total** | | | **9** | **2026-06-10** |
+| 4 | Maritime Ops | ⏳ In Progress | 23 | 2026-06-12 |
+| **Total** | | | **31** | **2026-06-12** |
 
 ---
 
 ## 🏛️ Knowledge Topics
 
+### [[hastral/roster/index|Hastral Roster]]
+
+**Purpose**: Directory of all personnel within the organisation.
+_Articles_: [[hastral/roster/hq|HQ Personnel]], [[hastral/roster/pmc|PMC Personnel]], [[hastral/roster/academy|Academy Personnel]], [[hastral/roster/others|Enterprise & Society]].
+
+### [[hastral/assets/index|Hastral Assets]]
+
 ### [[topics/operations/troubleshooting/index|Troubleshooting]]
 
 **Purpose**: Diagnosis and resolution for common development environment issues.
-_Articles_: [[topics/operations/troubleshooting/vscode-drag-drop-freeze|VS Code Drag-and-Drop Freeze]], [[topics/operations/troubleshooting/vscode-gpu-acceleration|VS Code GPU Acceleration]], [[topics/operations/troubleshooting/task-update-schema-validation|TaskUpdate Schema Validation]], [[topics/operations/troubleshooting/claude-code-webfetch-hang|Claude Code WebFetch Hang]], [[topics/operations/troubleshooting/sqlite-fts5-corruption|SQLite FTS5 Corruption]], [[topics/operations/troubleshooting/sqlite-corruption-recovery|SQLite Corruption Recovery]].
+_Articles_: [[topics/operations/troubleshooting/vscode-drag-drop-drop-freeze|VS Code Drag-and-Drop Freeze]], [[topics/operations/troubleshooting/vscode-gpu-acceleration|VS Code GPU Acceleration]], [[topics/operations/troubleshooting/task-update-schema-validation|TaskUpdate Schema Validation]], [[topics/operations/troubleshooting/claude-code-webfetch-hang|Claude Code WebFetch Hang]], [[topics/operations/troubleshooting/sqlite-fts5-corruption|SQLite FTS5 Corruption]], [[topics/operations/troubleshooting/sqlite-corruption-recovery|SQLite Corruption Recovery]].
 
-### [[topics/codecraft/physics/index|Physics]]
+### [[topics/education/index|Education]]
+
+**Purpose**: Academic frameworks and training protocols.
+_Articles_: [[topics/education/hastral-academy-curriculum|Core Curriculum]].
+
+### [[topics/operations/protocols/index|Protocols]]
+
+**Purpose**: Standardized interaction and operational rules.
+_Articles_: [[topics/operations/protocols/robouno|RoboUno Protocol]].
+
+### [[events/index|Events]]
+
+**Purpose**: Chronological record of significant organisational events.
+_Articles_: [[events/aomori-academy-opening|Aomori Academy Opening]].
 
 **Purpose**: 3D rotation, geometric algebra, and rotor mechanics.
 _Articles_: [[topics/codecraft/physics/geometric-algebra-rotors|Geometric Algebra Rotors]], [[topics/codecraft/physics/rotor-roll-snapping|Rotor Roll Snapping]], [[topics/codecraft/physics/local-vs-global-rotor-operations|Local vs. Global Rotor Operations]], [[topics/codecraft/physics/euler-to-rotor-conversion|Euler to Rotor Conversion]].
@@ -47,7 +68,7 @@ _Articles_: [[topics/operations/claude_code/containerization_overview|Overview]]
 ### [[topics/foundation/index|1. Foundation]]
 
 **Purpose**: Core identity, ethical constraints, and operational standards.
-_Articles_: Ethics, Standards, [[markdown-admonitions|Markdown Admonitions]], Glossary.
+_Articles_: Ethics, Standards, [[markdown-admonitions|Markdown Admonitions]], Glossary, [[topics/foundation/ethical-hierarchy|Hastral Ethical Hierarchy]].
 
 ### [[topics/operations/hardware/index|Hardware]]
 
@@ -57,12 +78,12 @@ _Articles_: [[topics/operations/hardware/microsd-failure-diagnostics|microSD Fai
 ### [[topics/operations/security/index|Security]]
 
 **Purpose**: System audits, post-mortems, and doctrine maintenance.
-_Articles_: [[session_friction_audit|Session Friction Audit]], [[session_post_mortem_doctrine_disconnect|Post-Mortem & Doctrine Disconnect]], [[topics/operations/security/predictable_ids|Predictable IDs]], [[server-security-fundamentals|Server Security Fundamentals]], [[tls-jwt-implementation|TLS & JWT Implementation]], [[topics/operations/security/nwjs-env-exposure|NW.js Env Exposure]].
+_Articles_: [[session_friction_audit|Session Friction Audit]], [[session_post_mortem_doctrine_disconnect|Post-Mortem & Doctrine Disconnect]], [[topics/operations/security/predictable_ids|Predictable IDs]], [[server-security-fundamentals|Server Security Fundamentals]], [[tls-jwt-implementation|TLS & JWT Implementation]], [[topics/operations/security/nwjs-env-exposure|NW.js Env Exposure]], [[topics/security/antigravity-vulnerabilities|Agentic AI Vulnerabilities (Antigravity)]].
 
 ### [[topics/operations/maritime/index|Maritime Operations]]
 
 **Purpose**: Strategic transit, fleet management, and mission logistics.
-_Articles_: [[topics/operations/maritime/mission-frag-040|Mission FRAG-040]], [[topics/operations/maritime/a9805-diego-marea|A9805 Diego Marea]], [[topics/operations/maritime/task-force-raptor|Task Force Raptor]].
+_Articles_: [[topics/operations/maritime/mission-frag-040|Mission FRAG-040]], [[topics/operations/maritime/a9805-diego-marea|A9805 Diego Marea]], [[topics/operations/maritime/suez-indo-pacific-corridor|Suez-Indo-Pacific Corridor]], [[topics/operations/maritime/bluesky-stratagem|Bluesky Stratagem]], [[topics/operations/speranza-ii|Speranza II]], [[topics/operations/maritime/triple-emergency-2026|Triple Emergency (May 2026)]], [[topics/operations/maritime/sagar-doctrine|SAGAR Doctrine]].
 
 ### [[topics/operations/infrastructure/index|Infrastructure]]
 
@@ -72,17 +93,21 @@ _Articles_: [[system_insights_2026_04_20|System Insights 2026-04-20]], [[topics/
 ### [[topics/operations/humanitarian/index|Humanitarian & Crisis Response]]
 
 **Purpose**: Emergency response, relief operations, and global crisis coordination.
-_Articles_: [[topics/operations/humanitarian/global-crisis-2026|Global Crisis 2026 (Triple Emergency)]], [[topics/operations/humanitarian/sudan-famine-2026|Sudan Famine Crisis]].
+_Articles_: [[topics/operations/humanitarian/global-crisis-2026|Global Crisis 2026 (Triple Emergency)]], [[topics/operations/humanitarian/sudan-famine-2026|Sudan Famine Crisis]], [[topics/events/triple-emergency-2026|Triple Emergency (May 2026)]].
+
+### [[topics/research/index|Research]]
+
+**Purpose**: Theoretical analysis, case studies, and legal frameworks.
+_Articles_: [[topics/research/statehood-sovereignty|Statehood & Sovereignty]], [[topics/research/liberland|Liberland]], [[topics/research/antarctica-treaty|Antarctica Treaty]].
 
 ### [[topics/philosophy/index|3. Philosophy]]
 
-**Purpose**: Theoretical frameworks and first principles.
 _Articles_: Metaphysics, [[topics/philosophy/cognition/index|Cognition]].
 
 ### [[topics/research/index|4. Research]]
 
 **Purpose**: Experimental findings, technical platform guides, geopolitical analysis, and domain research.
-_Articles_: Technical, [[topics/research/technical/nanotech_realities|Nanotech]], [[magic_turing_complete|MTG Turing Completeness]], [[topics/research/openclaw/index|OpenClaw]], [[topics/research/technical/vlc_slow_boot_fix|VLC Slow Boot Fix]], [[topics/research/geopolitics/maritime-choke-points|Maritime Choke Points]], [[topics/research/geopolitics/board-of-peace-governance|Board of Peace Governance]].
+_Articles_: Technical, [[topics/research/technical/nanotech_realities|Nanotech]], [[magic_turing_complete|MTG Turing Completeness]], [[topics/research/openclaw/index|OpenClaw]], [[topics/research/technical/vlc_slow_boot_fix|VLC Slow Boot Fix]], [[topics/research/geopolitics/maritime-choke-points|Maritime Choke Points]], [[topics/research/geopolitics/board-of-peace-governance|Board of Peace Governance]], [[topics/research/statehood-sovereignty|Statehood & Sovereignty]], [[topics/research/liberland|Liberland]], [[topics/research/draken-international|Draken International]].
 
 ### [[topics/codecraft/audio/virtual-singers/index|Virtual Singers]]
 
